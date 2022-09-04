@@ -7,7 +7,6 @@ import JSONSection from '@/src/components/docs/JSONSection';
 import HeadersSection from '@/src/components/docs/HeadersSection';
 import DocLayout from '@/src/components/layouts/DocLayout';
 
-
 const AverageDocs: NextPage = () => {
   return (
     <DocLayout>

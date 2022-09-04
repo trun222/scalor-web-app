@@ -2,6 +2,7 @@
 import React from 'react';
 import { List, ListItem, Badge, Link } from '@chakra-ui/react'
 import NextLink from "next/link"
+import { useRouter } from 'next/router';
 
 const docMenuItems = [
   {
@@ -43,17 +44,21 @@ const docMenuItems = [
 ];
 
 export default function DocNavBar() {
+  const router = useRouter();
+  const activeRoute = router?.pathname;
+
   return (
     <List spacing={3} p={4}>
       {docMenuItems.map((item) =>
         <ListItem key={item.action}>
           <NextLink href={`/docs/${item.action.toLowerCase()}`} passHref>
-            <Link>
-              {item.action} <Badge colorScheme={item.type === 'POST' ? 'purple' : 'orange'} ml={4}>{item.type}</Badge>
+            <Link color={activeRoute === `/docs/${item.action.toLowerCase()}` ? 'white' : 'black'}>
+              <Badge colorScheme={item.type === 'POST' ? 'purple' : 'orange'} mr={4}>{item.type}</Badge>
+              {item.action}
             </Link>
           </NextLink>
         </ListItem>
       )}
-    </List>
+    </List >
   );
 }
