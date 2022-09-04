@@ -7,7 +7,7 @@ export default function JSONSection({ title, json }: { title: string, json: any 
       <Text fontSize="4xl" fontWeight="thin">
         {title}
       </Text>
-      <Box bg="white" p={4}>
+      <Box bg="whiteAlpha.500" p={4}>
         <PrettyJSON
           jsonObject={json}
           colors={{
