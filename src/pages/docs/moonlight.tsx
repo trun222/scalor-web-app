@@ -1,8 +1,12 @@
+
 import React from 'react';
 import type { NextPage } from 'next'
 import { Grid, GridItem, List, ListItem, Badge, VStack, HStack, Text, Box, Link } from '@chakra-ui/react'
 import NextLink from "next/link"
-import PrettyJSON from 'react-prettify-json';
+import ActionTitle from '@/src/components/docs/ActionTitle';
+import JSONSection from '@/src/components/docs/JSONSection';
+import HeadersSection from '@/src/components/docs/HeadersSection';
+
 
 const docMenuItems = [
   {
@@ -43,7 +47,7 @@ const docMenuItems = [
   }
 ];
 
-const Home: NextPage = () => {
+const MoonlightDocs: NextPage = () => {
   return (
     <Grid
       h='100vh'
@@ -67,13 +71,46 @@ const Home: NextPage = () => {
       </GridItem>
       <GridItem rowSpan={2} colSpan={4} bg='teal.300' overflowY="scroll">
         <VStack align="start" spacing={6} p={6}>
-          <Text>
-            Landing Page
+          <ActionTitle
+            action="Moonlight"
+            method="POST"
+          />
+
+          <Text fontSize="4xl" fontWeight="thin">
+            Description
           </Text>
+
+          <Text bg="white" w="60%" p={4}>
+            The Moonlight action adds a cool moonlight effect to images without removing color from the image.
+          </Text>
+
+          <HeadersSection
+            headers={[
+              { key: 'Content-Type', value: 'application/json' },
+              { key: 'token', value: 'API_TOKEN' }
+            ]}
+          />
+
+          <JSONSection
+            title="Body"
+            json={{
+              "id": "721389da-2f9e-46f1-b2e0-72498002e421",
+              "moonValue": 0.9,
+              "outputFileName": "moonlight_90",
+              "mimeType": "image/jpg"
+            }}
+          />
+
+          <JSONSection
+            title="Response"
+            json={{
+              "file": "data:image/jpg;base64, ${BASE64_DATA_STRING}"
+            }}
+          />
         </VStack>
       </GridItem>
     </Grid>
   )
 }
 
-export default Home
+export default MoonlightDocs;
