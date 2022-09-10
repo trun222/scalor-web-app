@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 import { VStack, Text } from '@chakra-ui/react'
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
-import HeadersSection from '@/src/components/docs/HeadersSection';
+import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import DocLayout from '@/src/components/layouts/DocLayout';
 
 const GrayDocs: NextPage = () => {
@@ -24,26 +24,40 @@ const GrayDocs: NextPage = () => {
           The gray method applies gray scale to an image or what most people consider a 'back and white' image.
         </Text>
 
-        <HeadersSection
-          headers={[
-            { key: 'Content-Type', value: 'application/json' },
-            { key: 'token', value: 'API_TOKEN' }
-          ]}
+        <JSONSection
+          title="Headers"
+          json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
         />
 
         <JSONSection
           title="Body"
           json={{
             "id": "721389da-2f9e-46f1-b2e0-72498002e421",
-            "outputFileName": "gray_image",
+            "platform": "WEB",
             "mimeType": "image/jpg"
           }}
         />
 
+        <PropertiesSection
+          properties={[
+            { key: 'platform', value: "string", note: 'Value can be either WEB or SERVER' }
+          ]}
+        />
+
         <JSONSection
-          title="Response"
+          title="Web Response"
           json={{
             "file": "data:image/jpg;base64, ${BASE64_DATA_STRING}"
+          }}
+        />
+
+        <JSONSection
+          title="Server Response"
+          json={{
+            "file": {
+              "type": "Buffer",
+              "data": "${BINARY_DATA}"
+            }
           }}
         />
       </VStack>

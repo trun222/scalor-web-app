@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 import { VStack, Text } from '@chakra-ui/react'
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
-import HeadersSection from '@/src/components/docs/HeadersSection';
+import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import DocLayout from '@/src/components/layouts/DocLayout';
 
 const SharpenDocs: NextPage = () => {
@@ -25,11 +25,9 @@ const SharpenDocs: NextPage = () => {
           picture profile to 'Vivid'. The colors will pop and the edges around object will be more defined the higher the sharpen value.
         </Text>
 
-        <HeadersSection
-          headers={[
-            { key: 'Content-Type', value: 'application/json' },
-            { key: 'token', value: 'API_TOKEN' }
-          ]}
+        <JSONSection
+          title="Headers"
+          json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
         />
 
         <JSONSection
@@ -37,15 +35,31 @@ const SharpenDocs: NextPage = () => {
           json={{
             "id": "721389da-2f9e-46f1-b2e0-72498002e421",
             "sharpenValue": 2,
-            "outputFileName": "sharpen_2",
+            "platform": "WEB",
             "mimeType": "image/jpg"
           }}
         />
 
+        <PropertiesSection
+          properties={[
+            { key: 'platform', value: "string", note: 'Value can be either WEB or SERVER' }
+          ]}
+        />
+
         <JSONSection
-          title="Response"
+          title="Web Response"
           json={{
             "file": "data:image/jpg;base64, ${BASE64_DATA_STRING}"
+          }}
+        />
+
+        <JSONSection
+          title="Server Response"
+          json={{
+            "file": {
+              "type": "Buffer",
+              "data": "${BINARY_DATA}"
+            }
           }}
         />
       </VStack>

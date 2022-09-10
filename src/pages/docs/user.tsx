@@ -4,7 +4,6 @@ import type { NextPage } from 'next'
 import { Badge, VStack, Text } from '@chakra-ui/react'
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
-import HeadersSection from '@/src/components/docs/HeadersSection';
 import DocLayout from '@/src/components/layouts/DocLayout';
 
 const UserDocs: NextPage = () => {
@@ -25,10 +24,9 @@ const UserDocs: NextPage = () => {
           <Badge colorScheme="orange" ml={4}> Note: Doesn't count against API usage rate</Badge>
         </Text>
 
-        <HeadersSection
-          headers={[
-            { key: 'token', value: 'API_TOKEN' }
-          ]}
+        <JSONSection
+          title="Headers"
+          json={{ token: '${API_TOKEN}' }}
         />
 
         <JSONSection

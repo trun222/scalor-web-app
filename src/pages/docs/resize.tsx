@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 import { VStack, Text } from '@chakra-ui/react'
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
-import HeadersSection from '@/src/components/docs/HeadersSection';
+import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import DocLayout from '@/src/components/layouts/DocLayout';
 
 const ResizeDocs: NextPage = () => {
@@ -25,13 +25,10 @@ const ResizeDocs: NextPage = () => {
           in order to maintain the proper ratio.
         </Text>
 
-        <HeadersSection
-          headers={[
-            { key: 'Content-Type', value: 'application/json' },
-            { key: 'token', value: 'API_TOKEN' }
-          ]}
+        <JSONSection
+          title="Headers"
+          json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
         />
-
 
         <JSONSection
           title="Body"
@@ -39,15 +36,31 @@ const ResizeDocs: NextPage = () => {
             "id": "721389da-2f9e-46f1-b2e0-72498002e421",
             "height": 500,
             "width": 500,
-            "outputFileName": "resized_500_by_500",
+            "platform": "WEB",
             "mimeType": "image/jpg"
           }}
         />
 
+        <PropertiesSection
+          properties={[
+            { key: 'platform', value: "string", note: 'Value can be either WEB or SERVER' }
+          ]}
+        />
+
         <JSONSection
-          title="Response"
+          title="Web Response"
           json={{
             "file": "data:image/jpg;base64, ${BASE64_DATA_STRING}"
+          }}
+        />
+
+        <JSONSection
+          title="Server Response"
+          json={{
+            "file": {
+              "type": "Buffer",
+              "data": "${BINARY_DATA}"
+            }
           }}
         />
       </VStack>

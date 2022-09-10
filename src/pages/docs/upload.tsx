@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 import { List, ListItem, Badge, VStack, Text, Box } from '@chakra-ui/react'
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
-import HeadersSection from '@/src/components/docs/HeadersSection';
+import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import DocLayout from '@/src/components/layouts/DocLayout';
 
 const UploadDocs: NextPage = () => {
@@ -25,23 +25,15 @@ const UploadDocs: NextPage = () => {
           Once the image is uploaded you will receive an uploadId that you will use for all subsequent operations on the image. The images on the server get wiped daily.
         </Text>
 
-        <HeadersSection
-          headers={[
-            { key: 'Content-Type', value: 'multipart/form-data' },
-            { key: 'token', value: 'API_TOKEN' }
-          ]}
+        <JSONSection
+          title="Headers"
+          json={{ 'Content-Type': 'multipart-form-data', token: '${API_TOKEN}' }}
         />
 
-        <Text fontSize="4xl" fontWeight="thin">
-          Body
-        </Text>
-        <Box w="60%" bg="white">
-          <List spacing={3} p={4}>
-            <ListItem>
-              file <Badge colorScheme={'purple'} ml={4}>multipart/form-data</Badge>
-            </ListItem>
-          </List>
-        </Box>
+        <JSONSection
+          title="Body"
+          json={{ file: '${multipart-form-data}' }}
+        />
 
         <JSONSection
           title="Response"
