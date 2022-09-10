@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "doppler run -- next dev",
+    "build": "doppler run -- next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -12,13 +12,19 @@
     "@chakra-ui/react": "^2.2.9",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@hookform/resolvers": "^2.9.7",
+    "axios": "^0.27.2",
     "framer-motion": "^7.2.1",
     "next": "12.2.5",
     "next-auth": "^4.10.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.2",
+    "react-hook-form": "^7.34.2",
     "react-icons": "^4.4.0",
-    "react-prettify-json": "^1.1.1"
+    "react-prettify-json": "^1.1.1",
+    "ts-pattern": "^4.0.5",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "18.7.13",

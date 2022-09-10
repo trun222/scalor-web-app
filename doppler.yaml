@@ -1,0 +1,3 @@
+setup:
+  project: scalor-web-app
+  config: local
