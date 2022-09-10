@@ -1,10 +1,9 @@
 
 import React from 'react';
 import type { NextPage } from 'next'
-import { List, ListItem, Badge, VStack, Text, Box } from '@chakra-ui/react'
+import { VStack, Text } from '@chakra-ui/react'
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
-import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import DocLayout from '@/src/components/layouts/DocLayout';
 
 const UploadDocs: NextPage = () => {

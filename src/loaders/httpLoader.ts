@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default async function useHTTP({ route, payload, token }: any) {
+export default async function httpLoader({ route, payload, token }: any) {
   try {
     return (await axios
       .post(`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/${route}`, payload, {

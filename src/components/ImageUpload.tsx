@@ -2,22 +2,22 @@ import React from 'react';
 import { Box, HStack, Image, Button, Input } from "@chakra-ui/react";
 interface Props {
   uploadId: string,
-  onSubmit: (HTMLFormElement) => void
-  onChange?: (string) => void
+  onSubmit: (HTMLFormElement: any) => void
+  onChange?: (string: string) => void
 }
 
 export default function ImageUpload({ onSubmit, onChange, uploadId }: Props) {
   const [loadedImage, setLoadedImage] = React.useState(null);
   const inputRef = React.useRef(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     // Send to parent component
     onSubmit(formData);
   };
 
-  const handleImageLoad = async (e) => {
+  const handleImageLoad = async (e: any) => {
     let files = e.target.files;
     let file = files[0];
     let reader = new FileReader();
@@ -48,6 +48,7 @@ export default function ImageUpload({ onSubmit, onChange, uploadId }: Props) {
               src={loadedImage!}
               boxSize='lg'
               objectFit='scale-down'
+              alt="Loaded Image"
               h="256px"
               w="256px"
             />

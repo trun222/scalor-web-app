@@ -9,17 +9,17 @@ import {
 } from "@chakra-ui/react";
 import { handleImageMutation } from "@/src/util/action.service";
 import ImageUpload from "@/src/components/ImageUpload";
-import useHTTP from "@/src/hooks/useHTTP";
+import httpLoader from "@/src/loaders/httpLoader";
 
 export default function CollageAction({ uploadId, onIsLoaded, onConvertedImage }: any) {
   const [uploadIdTwo, setUploadIdTwo] = React.useState("");
-  const [uploadedImage, setUploadedImage] = React.useState("");
-  const [isLoaded, setIsLoaded] = React.useState(true);
+  const [_, setUploadedImage] = React.useState("");
+  const [isLoaded] = React.useState(true);
   const toast = useToast();
 
   const onSubmit = async (formData: any) => {
     try {
-      const data = await useHTTP({
+      const data = await httpLoader({
         route: 'upload',
         payload: formData,
         token: process?.env?.NEXT_PUBLIC_USER_API_TOKEN,

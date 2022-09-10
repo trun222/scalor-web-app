@@ -1,9 +1,9 @@
-import useHTTP from "../hooks/useHTTP";
+import httpLoader from "../loaders/httpLoader";
 
-export const handleImageMutation = async ({ request, onIsLoaded, onConvertedImage, toast }) => {
+export const handleImageMutation = async ({ request, onIsLoaded, onConvertedImage, toast }: any) => {
   try {
     onIsLoaded(false);
-    const data = await useHTTP(request)
+    const data = await httpLoader(request)
     onConvertedImage(data.file);
     onIsLoaded(true);
     toast({

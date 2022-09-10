@@ -21,7 +21,7 @@ const UserDocs: NextPage = () => {
 
         <Text bg="white" w="60%" p={4}>
           Retrieve user contact information, token, and usage.
-          <Badge colorScheme="orange" ml={4}> Note: Doesn't count against API usage rate</Badge>
+          <Badge colorScheme="orange" ml={4}> Note: Doesn&apos;t count against API usage rate</Badge>
         </Text>
 
         <JSONSection

@@ -25,7 +25,7 @@ export default function DropZone({
   const [isError, setIsError] = useState({ error: false, message: "" });
 
   const onDrop = useCallback(
-    (acceptedFiles) => {
+    (acceptedFiles: any) => {
       try {
         acceptedFiles.forEach((file: any) => {
           const reader = new FileReader();
@@ -55,9 +55,9 @@ export default function DropZone({
         onError(e);
       }
     },
-    [onChange]
+    [onChange, onError]
   );
-  const { acceptedFiles, fileRejections, getRootProps, getInputProps } =
+  const { getRootProps, getInputProps } =
     useDropzone({
       onDrop,
       maxFiles: multiple ? 10 : 1,

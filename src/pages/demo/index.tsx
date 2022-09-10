@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import ImageUpload from "@/src/components/ImageUpload";
 import ActionsBar from "@/src/components/ActionsBar";
-import useHTTP from "@/src/hooks/useHTTP";
+import httpLoader from "@/src/loaders/httpLoader";
 import { match } from 'ts-pattern';
 
 const DemoPage: NextPage = () => {
@@ -22,9 +22,9 @@ const DemoPage: NextPage = () => {
   const [uploadId, setUploadId] = React.useState("");
   const toast = useToast();
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (formData: any) => {
     try {
-      const data = await useHTTP({
+      const data = await httpLoader({
         route: 'upload',
         payload: formData,
         token: process?.env?.NEXT_PUBLIC_USER_API_TOKEN,
@@ -74,6 +74,7 @@ const DemoPage: NextPage = () => {
                         src={uploadedImage}
                         boxSize='md'
                         objectFit='scale-down'
+                        alt="Uploaded Image"
                         h="350px"
                         w="350px"
                       />
@@ -82,6 +83,7 @@ const DemoPage: NextPage = () => {
                       src={convertedImage}
                       boxSize='md'
                       objectFit='scale-down'
+                      alt="Modified Image"
                       h="350px"
                       w="350px"
                     />
@@ -104,8 +106,8 @@ const DemoPage: NextPage = () => {
 
         <ActionsBar
           uploadId={uploadId}
-          onIsLoaded={(state) => setIsLoaded(state)}
-          onConvertedImage={(imageData) => setConvertedImage(imageData)}
+          onIsLoaded={(state: boolean) => setIsLoaded(state)}
+          onConvertedImage={(imageData: string) => setConvertedImage(imageData)}
           convertedImage={convertedImage}
         />
       </VStack>

@@ -22,7 +22,7 @@ const SharpenDocs: NextPage = () => {
 
         <Text bg="white" w="60%" p={4}>
           The sharpen action adds sharper, more vibrant color contrast to an image. Similar to the effect of changing a television
-          picture profile to 'Vivid'. The colors will pop and the edges around object will be more defined the higher the sharpen value.
+          picture profile to &apos; Vivid &apos;. The colors will pop and the edges around object will be more defined the higher the sharpen value.
         </Text>
 
         <JSONSection
