@@ -1,8 +1,36 @@
 import React from 'react';
-import { Text, Button, HStack } from '@chakra-ui/react'
+import { Text, Button, HStack, Box } from '@chakra-ui/react'
 import NextLink from 'next/link';
+import Image from 'next/image';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 export default function Navbar() {
+  const { data: session } = useSession();
+  console.log({ session });
+
+  const UserSession = () => {
+    if (session) {
+      return (
+        <HStack>
+          <Box h="48px" w="48px">
+            <Image
+              src={session?.user?.image!}
+              height="48px"
+              width="48px"
+            />
+          </Box>
+          <Button onClick={() => signOut()} color="red.500">Sign out</Button>
+        </HStack>
+      )
+    }
+
+    return (
+      <Button onClick={() => signIn()}>
+        Log In
+      </Button>
+    )
+  }
+
   return (
     <HStack alignItems="center" justify="space-between" h="100%">
       <HStack spacing={4}>
@@ -36,17 +64,8 @@ export default function Navbar() {
       </HStack>
 
       <HStack spacing={4}>
-        <NextLink href='/login' passHref>
-          <Button>
-            Log In
-          </Button>
-        </NextLink>
-        <NextLink href='/signup' passHref>
-          <Button>
-            Sign Up
-          </Button>
-        </NextLink>
+        <UserSession />
       </HStack>
-    </HStack>
+    </HStack >
   );
 }
