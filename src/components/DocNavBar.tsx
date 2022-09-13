@@ -52,7 +52,7 @@ export default function DocNavBar() {
       {docMenuItems.map((item) =>
         <ListItem key={item.action}>
           <NextLink href={`/docs/${item.action.toLowerCase()}`} passHref>
-            <Link color={activeRoute === `/docs/${item.action.toLowerCase()}` ? 'teal.300' : 'black'}>
+            <Link fontWeight={activeRoute === `/docs/${item.action.toLowerCase()}` ? 'bold' : 'normal'}>
               <Badge colorScheme={item.type === 'POST' ? 'purple' : 'orange'} mr={4}>{item.type}</Badge>
               {item.action}
             </Link>

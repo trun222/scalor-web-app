@@ -2,19 +2,22 @@
 import React from 'react';
 import { Grid, GridItem } from '@chakra-ui/react'
 import DocNavBar from '../DocNavBar';
+import Navbar from '@/src/components/Navbar';
 
 export default function DocLayout({ children }: { children: any }) {
   return (
     <Grid
       h='100vh'
-      templateRows='repeat(2, 1fr)'
-      templateColumns='repeat(5, 1fr)'
-      gap={4}
+      templateRows='repeat(12, 1fr)'
+      templateColumns='repeat(12, 1fr)'
     >
-      <GridItem rowSpan={2} colSpan={1} bg='whiteAlpha.300'>
+      <GridItem rowSpan={1} colSpan={12} bg='gray.50' px={10}>
+        <Navbar />
+      </GridItem>
+      <GridItem rowSpan={11} colSpan={2} bg='gray.200'>
         <DocNavBar />
       </GridItem>
-      <GridItem rowSpan={2} colSpan={4} bg='blackAlpha.300' overflowY="scroll">
+      <GridItem rowSpan={11} colSpan={10} bg='gray.300' overflowY="scroll">
         {children}
       </GridItem>
     </Grid>
