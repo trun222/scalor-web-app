@@ -51,6 +51,11 @@ export default function Navbar() {
             Documentation
           </Button>
         </NextLink>
+        <NextLink href='/demo' passHref>
+          <Button>
+            Demo
+          </Button>
+        </NextLink>
         <NextLink href='/pricing' passHref>
           <Button>
             Pricing

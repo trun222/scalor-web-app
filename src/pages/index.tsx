@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, GridItem } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import Navbar from '@/src/components/Navbar';
+import LandingSection from '@/src/components/LandingSection';
 
 const Dashboard: NextPage = () => {
   return (
@@ -14,6 +15,7 @@ const Dashboard: NextPage = () => {
         <Navbar />
       </GridItem>
       <GridItem rowSpan={11} colSpan={12} bg='gray.300'>
+        <LandingSection />
       </GridItem>
     </Grid >
   )
