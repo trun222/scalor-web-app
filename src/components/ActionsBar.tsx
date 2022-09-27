@@ -17,8 +17,8 @@ import QualityAction from "./Actions/QualityAction";
 
 export default function ActionsBar({ onIsLoaded, onConvertedImage, uploadId, convertedImage }: any) {
   return (
-    <Tabs colorScheme="blackAlpha">
-      <TabList>
+    <Tabs colorScheme="blackAlpha" >
+      <TabList mt={20}>
         <Tab isDisabled={!uploadId}>Resize</Tab>
         <Tab isDisabled={!uploadId}>Moonlight</Tab>
         <Tab isDisabled={!uploadId}>Sharpen</Tab>

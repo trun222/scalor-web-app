@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, HStack, Image, Button, Input } from "@chakra-ui/react";
+import { Box, HStack, Text, Image, Button, Input } from "@chakra-ui/react";
 interface Props {
   uploadId: string,
   onSubmit: (HTMLFormElement: any) => void
@@ -36,12 +36,12 @@ export default function ImageUpload({ onSubmit, onChange, uploadId }: Props) {
 
   return (
     <Box
-      height="350px"
-      width="350px"
+      height="250px"
+      width="250px"
     >
       <form onSubmit={handleSubmit}>
         <Input ref={inputRef} type="file" name="file" onChange={handleImageLoad} border="none" />
-
+        {!loadedImage && <Text fontSize="sm">Please upload a photo to test Scalor!</Text>}
         {loadedImage && (
           <>
             <Image

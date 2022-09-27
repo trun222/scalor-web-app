@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import React from "react";
 import {
   Skeleton,
-  Box,
   HStack,
   VStack,
   Text,
@@ -13,6 +12,7 @@ import {
 import ImageUpload from "@/src/components/ImageUpload";
 import ActionsBar from "@/src/components/ActionsBar";
 import httpLoader from "@/src/loaders/httpLoader";
+import NavBarLayout from "@/src/components/layouts/NavBarLayout";
 import { match } from 'ts-pattern';
 
 const DemoPage: NextPage = () => {
@@ -50,10 +50,10 @@ const DemoPage: NextPage = () => {
   };
 
   return (
-    <Box bg="teal.300" h="100%" minH="100vh" py={10}>
-      <VStack justify="center" spacing={10}>
-        <Text fontSize="9xl" fontWeight="thin" letterSpacing={20}>
-          Scalor
+    <NavBarLayout>
+      <VStack align="center" justify="center" spacing={10}>
+        <Text fontSize="8xl">
+          Demo
         </Text>
 
         <Skeleton isLoaded={isLoaded}>
@@ -104,14 +104,16 @@ const DemoPage: NextPage = () => {
           </Button>
         }
 
-        <ActionsBar
-          uploadId={uploadId}
-          onIsLoaded={(state: boolean) => setIsLoaded(state)}
-          onConvertedImage={(imageData: string) => setConvertedImage(imageData)}
-          convertedImage={convertedImage}
-        />
+        {uploadId &&
+          <ActionsBar
+            uploadId={uploadId}
+            onIsLoaded={(state: boolean) => setIsLoaded(state)}
+            onConvertedImage={(imageData: string) => setConvertedImage(imageData)}
+            convertedImage={convertedImage}
+          />
+        }
       </VStack>
-    </Box>
+    </NavBarLayout>
   )
 }
 

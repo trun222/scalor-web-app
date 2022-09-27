@@ -48,20 +48,7 @@ export default function CollageAction({ uploadId, onIsLoaded, onConvertedImage }
     <VStack>
       <Text fontSize="4xl" fontWeight="thin">Collage Example</Text>
 
-      <Skeleton isLoaded={isLoaded}>
-        <HStack spacing={10}>
-          <ImageUpload
-            uploadId={uploadId}
-            onSubmit={onSubmit}
-            onChange={(imageData) => {
-              setUploadedImage(imageData);
-            }}
-          />
-        </HStack>
-      </Skeleton>
-
       <Button
-        mt={4}
         disabled={!uploadId || !uploadIdTwo}
         onClick={async () =>
           handleImageMutation({
@@ -80,9 +67,23 @@ export default function CollageAction({ uploadId, onIsLoaded, onConvertedImage }
             toast
           })}
         colorScheme="teal"
-        size="sm">
+        size="sm"
+        my="4"
+      >
         Collage
       </Button>
+
+      <Skeleton isLoaded={isLoaded}>
+        <HStack spacing={10}>
+          <ImageUpload
+            uploadId={uploadId}
+            onSubmit={onSubmit}
+            onChange={(imageData) => {
+              setUploadedImage(imageData);
+            }}
+          />
+        </HStack>
+      </Skeleton>
     </VStack>
   );
 }
