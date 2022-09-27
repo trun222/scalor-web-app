@@ -59,6 +59,6 @@ export default function DocNavBar() {
           </NextLink>
         </ListItem>
       )}
-    </List >
+    </List>
   );
 }

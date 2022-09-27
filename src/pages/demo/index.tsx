@@ -52,7 +52,7 @@ const DemoPage: NextPage = () => {
   return (
     <NavBarLayout>
       <VStack align="center" justify="center" spacing={10}>
-        <Text fontSize="8xl">
+        <Text fontSize="8xl" fontWeight="bold" color="white">
           Demo
         </Text>
 

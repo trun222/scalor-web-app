@@ -61,7 +61,7 @@ export default function Navbar() {
             Pricing
           </Button>
         </NextLink>
-        <NextLink href='/support' passHref>
+        <NextLink href='mailto:scalor@protonmail.com'>
           <Button>
             Support
           </Button>
