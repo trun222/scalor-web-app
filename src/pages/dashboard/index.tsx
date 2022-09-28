@@ -5,15 +5,20 @@ import {
 } from "@chakra-ui/react";
 import SideBarLayout from "@/src/components/layouts/SideBarLayout";
 
+const menuItems = [
+  {
+    action: 'Usage',
+    link: '/dashboard/usage'
+  },
+  {
+    action: 'Billing',
+    link: '/dashboard/billing'
+  }
+];
+
+
 const DashboardPage: NextPage = () => {
-  const menuItems = [
-    {
-      action: 'Usage'
-    },
-    {
-      action: 'Billing'
-    }
-  ];
+
 
   return (
     <SideBarLayout menuItems={menuItems}>
