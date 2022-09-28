@@ -48,9 +48,7 @@ export default function ResizeAction({ uploadId, convertedImage, onIsLoaded, onC
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Text fontSize="4xl" fontWeight="thin">Resize Example</Text>
-
-      <VStack spacing={4} p={6}>
+      <VStack spacing={4} mt={2}>
         <Controller
           name="height"
           control={control}

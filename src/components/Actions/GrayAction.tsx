@@ -2,7 +2,6 @@ import React from "react";
 import {
   Button,
   useToast,
-  Text,
   VStack
 } from "@chakra-ui/react";
 import { handleImageMutation } from "@/src/util/action.service";
@@ -12,8 +11,6 @@ export default function GrayAction({ uploadId, onIsLoaded, onConvertedImage }: a
 
   return (
     <VStack>
-      <Text fontSize="4xl" fontWeight="thin">Gray Example</Text>
-
       <Button
         mt={4}
         disabled={!uploadId}

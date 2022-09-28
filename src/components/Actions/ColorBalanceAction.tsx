@@ -13,8 +13,6 @@ export default function ColorBalanceAction({ uploadId, onIsLoaded, onConvertedIm
 
   return (
     <VStack>
-      <Text fontSize="4xl" fontWeight="thin">Color Balance Example</Text>
-
       <Button
         mt={4}
         disabled={!uploadId}

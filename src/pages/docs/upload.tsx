@@ -4,11 +4,11 @@ import type { NextPage } from 'next'
 import { VStack, Text } from '@chakra-ui/react'
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
-import DocLayout from '@/src/components/layouts/DocLayout';
+import SideBarLayout from '@/src/components/layouts/SideBarLayout';
 
 const UploadDocs: NextPage = () => {
   return (
-    <DocLayout>
+    <SideBarLayout>
       <VStack align="start" spacing={6} p={6}>
         <ActionTitle
           action="Upload"
@@ -41,7 +41,7 @@ const UploadDocs: NextPage = () => {
           }}
         />
       </VStack>
-    </DocLayout>
+    </SideBarLayout>
   )
 }
 

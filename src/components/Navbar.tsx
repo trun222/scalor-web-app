@@ -12,13 +12,15 @@ export default function Navbar() {
     if (session) {
       return (
         <HStack>
-          <Box h="48px" w="48px">
-            <Image
-              src={session?.user?.image!}
-              height="48px"
-              width="48px"
-            />
-          </Box>
+          <NextLink href='/dashboard' passHref>
+            <Box h="48px" w="48px" _hover={{ boxShadow: 'lg', cursor: 'pointer' }}>
+              <Image
+                src={session?.user?.image!}
+                height="48px"
+                width="48px"
+              />
+            </Box>
+          </NextLink>
           <Button onClick={() => signOut()} color="red.500">Sign out</Button>
         </HStack>
       )
@@ -51,7 +53,7 @@ export default function Navbar() {
             Documentation
           </Button>
         </NextLink>
-        <NextLink href='/demo' passHref>
+        <NextLink href='/demo/resize' passHref>
           <Button>
             Demo
           </Button>

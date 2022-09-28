@@ -43,8 +43,6 @@ export default function SharpenAction({ uploadId, onIsLoaded, onConvertedImage }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Text fontSize="4xl" fontWeight="thin">Sharpen Example</Text>
-
       <Controller
         name="sharpenValue"
         control={control}

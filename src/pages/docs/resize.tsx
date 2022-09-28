@@ -5,11 +5,11 @@ import { VStack, Text } from '@chakra-ui/react'
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
-import DocLayout from '@/src/components/layouts/DocLayout';
+import SideBarLayout from '@/src/components/layouts/SideBarLayout';
 
 const ResizeDocs: NextPage = () => {
   return (
-    <DocLayout>
+    <SideBarLayout>
       <VStack align="start" spacing={6} p={6}>
         <ActionTitle
           action="Resize"
@@ -64,7 +64,7 @@ const ResizeDocs: NextPage = () => {
           }}
         />
       </VStack>
-    </DocLayout>
+    </SideBarLayout>
   )
 }
 

@@ -43,7 +43,6 @@ export default function MoolightAction({ uploadId, onIsLoaded, onConvertedImage 
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Text fontSize="4xl" fontWeight="thin">Moonlight Example</Text>
       <Controller
         name="moonValue"
         control={control}

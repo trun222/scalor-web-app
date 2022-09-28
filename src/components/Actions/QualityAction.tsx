@@ -43,8 +43,6 @@ export default function QualityAction({ uploadId, onIsLoaded, onConvertedImage }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Text fontSize="4xl" fontWeight="thin">Quality Example</Text>
-
       <Controller
         name="quality"
         control={control}

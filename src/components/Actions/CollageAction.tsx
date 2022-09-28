@@ -46,8 +46,6 @@ export default function CollageAction({ uploadId, onIsLoaded, onConvertedImage }
 
   return (
     <VStack>
-      <Text fontSize="4xl" fontWeight="thin">Collage Example</Text>
-
       <Button
         disabled={!uploadId || !uploadIdTwo}
         onClick={async () =>
