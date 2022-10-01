@@ -3,8 +3,9 @@ import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google";
 import GitlabProvider from "next-auth/providers/gitlab";
 import DiscordProvider from "next-auth/providers/discord";
+const jwt = require("node-jsonwebtoken");
 
-export default NextAuth({
+export const authOptions = {
   providers: [
     GithubProvider({
       clientId: process.env.OAUTH_PROVIDER_GITHUB_ID!,
@@ -27,4 +28,18 @@ export default NextAuth({
       }
     }),
   ],
-})
+  callbacks: {
+    async session({ session }: any) {
+      const accessToken = jwt.sign(session, process?.env?.NEXT_PUBLIC_TOKEN_PRIVATE_KEY);
+      // Add the Scalor user data to the session so that it is easily accessible
+      const { contact, usage, token } = await fetch(process?.env?.NEXT_PUBLIC_API_ENDPOINT + '/scalorUser', { headers: { accessToken } }).then(data => data.json());
+      session.contact = contact;
+      session.usage = usage;
+      session.token = token;
+      session.accessToken = accessToken;
+      return session
+    }
+  }
+};
+
+export default NextAuth(authOptions);
