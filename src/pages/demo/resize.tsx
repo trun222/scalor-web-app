@@ -1,20 +1,11 @@
 import type { NextPage } from "next";
 import React from "react";
 import {
-  Skeleton,
-  HStack,
-  VStack,
   Grid,
   GridItem,
   Text,
-  Button,
-  Image,
-  useToast
 } from "@chakra-ui/react";
-import ImageUpload from "@/src/components/ImageUpload";
-import httpLoader from "@/src/loaders/httpLoader";
 import SideBarLayout from "@/src/components/layouts/SideBarLayout";
-import { match } from 'ts-pattern';
 import ResizeAction from "@/src/components/Actions/ResizeAction";
 import DemoUploader from "@/src/components/uploads/DemoUploader";
 

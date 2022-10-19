@@ -2,7 +2,6 @@ import React from "react";
 import {
   Button,
   useToast,
-  Text,
   VStack
 } from "@chakra-ui/react";
 import { handleImageMutation } from "@/src/util/action.service";

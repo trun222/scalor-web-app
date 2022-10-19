@@ -7,25 +7,25 @@ import {
 } from "@chakra-ui/react";
 import NavBarLayout from "@/src/components/layouts/NavBarLayout";
 import { useSession } from 'next-auth/react';
-import type { Session } from "next-auth/core/types";
+// import type { Session } from "next-auth/core/types";
 
-type ScalorSession = {
-  contact: {
-    firstName: string;
-    lastName: string;
-    address: string;
-    city: string;
-    state: string;
-    zip: string;
-  },
-  usage: {
-    apiUsage: number;
-    storageUsage: number;
-    subscriptionDate: string;
-  },
-  token: string;
-  accessToken: string;
-} | Session;
+// type ScalorSession = {
+//   contact: {
+//     firstName: string;
+//     lastName: string;
+//     address: string;
+//     city: string;
+//     state: string;
+//     zip: string;
+//   },
+//   usage: {
+//     apiUsage: number;
+//     storageUsage: number;
+//     subscriptionDate: string;
+//   },
+//   token: string;
+//   accessToken: string;
+// } | Session;
 
 const DashboardPage: NextPage = () => {
   const { data } = useSession();

@@ -2,7 +2,6 @@ import React from "react";
 import {
   Button,
   useToast,
-  Text,
   VStack,
   Skeleton,
   HStack,

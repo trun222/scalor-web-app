@@ -26,7 +26,7 @@ export default function Navbar() {
     }
 
     return (
-      <Button onClick={() => signIn()}>
+      <Button onClick={() => signIn()} bg="none">
         Log In
       </Button>
     )
@@ -48,22 +48,22 @@ export default function Navbar() {
           </Text>
         </NextLink>
         <NextLink href='/docs/user' passHref>
-          <Button>
+          <Button bg="none">
             Documentation
           </Button>
         </NextLink>
         <NextLink href='/demo/resize' passHref>
-          <Button>
+          <Button bg="none">
             Demo
           </Button>
         </NextLink>
         <NextLink href='/pricing' passHref>
-          <Button>
+          <Button bg="none">
             Pricing
           </Button>
         </NextLink>
         <NextLink href='mailto:scalor@protonmail.com'>
-          <Button>
+          <Button bg="none">
             Support
           </Button>
         </NextLink>
