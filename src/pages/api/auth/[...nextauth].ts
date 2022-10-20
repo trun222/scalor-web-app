@@ -28,8 +28,14 @@ export const authOptions = {
       }
     }),
   ],
+  pages: {
+    signIn: "/auth/signin",
+  },
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
+    async redirect({ url, baseUrl }: any) {
+      return '/'
+    },
     async session({ session }: any) {
       const accessToken = jwt.sign(session, process?.env?.NEXT_PUBLIC_TOKEN_PRIVATE_KEY);
       // Add the Scalor user data to the session so that it is easily accessible
