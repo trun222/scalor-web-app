@@ -4,9 +4,12 @@ import {
   VStack,
   Text,
   Box,
+  Button
 } from "@chakra-ui/react";
 import NavBarLayout from "@/src/components/layouts/NavBarLayout";
 import { useSession } from 'next-auth/react';
+import axios from 'axios';
+import Router from "next/router";
 // import type { Session } from "next-auth/core/types";
 
 // type ScalorSession = {
@@ -31,6 +34,11 @@ const DashboardPage: NextPage = () => {
   const { data } = useSession();
   const session: any = data;
 
+  // const handleManageStripeAccount = async () => {
+  //   const response = await axios.post('/api/subscribe/checkout-session', { lookup_key: STRIPE_MEMBERSHIP[type] });
+  //   Router.push(response.data);
+  // }
+
   return (
     <NavBarLayout>
       <VStack align="center" justify="center" spacing={6} h="100vh">
@@ -49,6 +57,10 @@ const DashboardPage: NextPage = () => {
           <Text fontSize="4xl" fontWeight="bold">{session?.token}</Text>
         </Box>
         <Text>Note: Keep this somewhere safe..</Text>
+
+        {/* <Button onClick={handleManageStripeAccount}>
+          Manage Account
+        </Button> */}
       </VStack>
     </NavBarLayout>
   )

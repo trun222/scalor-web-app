@@ -10,8 +10,16 @@ import {
   Button
 } from "@chakra-ui/react";
 import NavBarLayout from "@/src/components/layouts/NavBarLayout";
+import { STRIPE_MEMBERSHIP } from "@/src/interfaces/Stripe.interface";
+import axios from 'axios';
+import Router from "next/router";
 
 const PricingPage: NextPage = () => {
+  const handleSubscribe = async (type: STRIPE_MEMBERSHIP) => {
+    const response = await axios.post('/api/subscribe/checkout-session', { lookup_key: STRIPE_MEMBERSHIP[type], email: 'thomasunderwoodii@gmail.com' });
+    Router.push(response.data);
+  }
+
   return (
     <NavBarLayout>
       <VStack align="center" justify="center" spacing={6} pb={10}>
@@ -57,9 +65,9 @@ const PricingPage: NextPage = () => {
               </ListItem>
 
               <Text fontSize="2xl" fontWeight="bold" color="white">Price</Text>
-              <Text fontSize="xl" color="white">$4.99/mo 🤓</Text>
+              <Text fontSize="xl" color="white">$3.99/mo 🤓</Text>
 
-              <Button variant="outline" color="white" _hover={{ color: 'black' }} mt={2}>
+              <Button variant="outline" color="white" _hover={{ color: 'black' }} mt={2} onClick={() => handleSubscribe(STRIPE_MEMBERSHIP.PREMIUM)}>
                 Subscribe
               </Button>
             </List>
@@ -79,9 +87,9 @@ const PricingPage: NextPage = () => {
               </ListItem>
 
               <Text fontSize="2xl" fontWeight="bold" color="white">Price</Text>
-              <Text fontSize="xl" color="white">$7.99/mo 💪</Text>
+              <Text fontSize="xl" color="white">$6.99/mo 💪</Text>
 
-              <Button variant="outline" color="white" _hover={{ color: 'black' }} mt={2}>
+              <Button variant="outline" color="white" _hover={{ color: 'black' }} mt={2} onClick={() => handleSubscribe(STRIPE_MEMBERSHIP.PRO)}>
                 Subscribe
               </Button>
             </List>
