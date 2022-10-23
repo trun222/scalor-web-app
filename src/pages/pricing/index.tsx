@@ -20,6 +20,11 @@ const PricingPage: NextPage = () => {
     Router.push(response.data);
   }
 
+  const handleManageStripeAccount = async () => {
+    const response = await axios.post('/api/subscribe/portal-session', { email: 'thomasunderwoodii@gmail.com' });
+    Router.push(response.data);
+  }
+
   return (
     <NavBarLayout>
       <VStack align="center" justify="center" spacing={6} pb={10}>
@@ -95,6 +100,10 @@ const PricingPage: NextPage = () => {
             </List>
           </Box>
         </HStack>
+
+        <Button onClick={handleManageStripeAccount}>
+          Manage Account
+        </Button>
 
         <Text>
           Please consider subscribing to support Scalor so that we can continue to expand features for all users!
