@@ -114,3 +114,4 @@
 // }
 
 // export default PricingPage;
+export { };

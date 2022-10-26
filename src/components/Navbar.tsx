@@ -15,6 +15,7 @@ export default function Navbar() {
             <Box h="48px" w="48px" _hover={{ boxShadow: 'lg', cursor: 'pointer' }}>
               <Image
                 src={session?.user?.image!}
+                alt="Profile"
                 height="48px"
                 width="48px"
               />

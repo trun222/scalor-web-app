@@ -4,12 +4,12 @@ import {
   VStack,
   Text,
   Box,
-  Button
+
 } from "@chakra-ui/react";
 import NavBarLayout from "@/src/components/layouts/NavBarLayout";
 import { useSession } from 'next-auth/react';
-import axios from 'axios';
-import Router from "next/router";
+// import axios from 'axios';
+// import Router from "next/router";
 // import type { Session } from "next-auth/core/types";
 
 // type ScalorSession = {
