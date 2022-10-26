@@ -57,11 +57,11 @@ export default function Navbar() {
             Demo
           </Button>
         </NextLink>
-        <NextLink href='/pricing' passHref>
+        {/* <NextLink href='/pricing' passHref>
           <Button bg="none">
             Pricing
           </Button>
-        </NextLink>
+        </NextLink> */}
         <NextLink href='mailto:scalor@protonmail.com'>
           <Button bg="none">
             Support
