@@ -3,6 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { SessionProvider } from 'next-auth/react';
 import React, { useEffect } from "react";
 import Hotjar from '@hotjar/browser';
+import GoogleAnalytics from '@/src/components/3rdParty/GoogleAnalytics';
 
 function MyApp({ Component, session, pageProps }: any) {
   const siteID: any = process?.env?.NEXT_PUBLIC_HOTJAR_SITE_ID!;
@@ -14,11 +15,14 @@ function MyApp({ Component, session, pageProps }: any) {
   });
 
   return (
-    <SessionProvider session={session}>
-      <ChakraProvider>
-        <Component {...pageProps} />
-      </ChakraProvider>
-    </SessionProvider>
+    <>
+      <GoogleAnalytics />
+      <SessionProvider session={session}>
+        <ChakraProvider>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </SessionProvider>
+    </>
   );
 }
 
