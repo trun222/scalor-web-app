@@ -4,7 +4,7 @@ import {
   VStack,
   Text,
   Box,
-
+  Button
 } from "@chakra-ui/react";
 import NavBarLayout from "@/src/components/layouts/NavBarLayout";
 import { useSession } from 'next-auth/react';
@@ -57,6 +57,12 @@ const DashboardPage: NextPage = () => {
           <Text fontSize="4xl" fontWeight="bold">{session?.token}</Text>
         </Box>
         <Text>Note: Keep this somewhere safe..</Text>
+
+        <Button onClick={() => {
+          throw Error('SENTRY');
+        }}>
+          Throw Error
+        </Button>
 
         {/* <Button onClick={handleManageStripeAccount}>
           Manage Account

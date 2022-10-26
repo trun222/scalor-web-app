@@ -37,14 +37,18 @@ export const authOptions = {
       return '/'
     },
     async session({ session }: any) {
-      const accessToken = jwt.sign(session, process?.env?.NEXT_PUBLIC_TOKEN_PRIVATE_KEY);
-      // Add the Scalor user data to the session so that it is easily accessible
-      const { contact, usage, token } = await fetch(process?.env?.NEXT_PUBLIC_API_ENDPOINT + '/scalorUser', { headers: { accessToken } }).then(data => data.json());
-      session.contact = contact;
-      session.usage = usage;
-      session.token = token;
-      session.accessToken = accessToken;
-      return session
+      try {
+        const accessToken = jwt.sign(session, process?.env?.NEXT_PUBLIC_TOKEN_PRIVATE_KEY);
+        // Add the Scalor user data to the session so that it is easily accessible
+        const { contact, usage, token } = await fetch(process?.env?.NEXT_PUBLIC_API_ENDPOINT + '/scalorUser', { headers: { accessToken } }).then(data => data.json());
+        session.contact = contact;
+        session.usage = usage;
+        session.token = token;
+        session.accessToken = accessToken;
+        return session
+      } catch (e) {
+        throw new Error('There is an issue with setting the Scalor session');
+      }
     }
   }
 };
