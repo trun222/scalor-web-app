@@ -21,7 +21,7 @@ const GrayDocs: NextPage = () => {
         </Text>
 
         <Text bg="white" w="60%" p={4}>
-          The gray method applies gray scale to an image or what most people consider a &apos; back and white &apos; image.
+          The gray method applies gray scale to an image or what most people consider a back and white image.
         </Text>
 
         <JSONSection

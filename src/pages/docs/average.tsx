@@ -22,7 +22,7 @@ const AverageDocs: NextPage = () => {
 
         <Text bg="white" w="60%" p={4}>
           The color average method takes the average of all of the image pixels colors and applies that to the entire image. i.e. if there are many dark or light pixels that will effect
-          color of the rest of the pixels within the image.
+          the color of the rest of the pixels within the image.
         </Text>
 
         <JSONSection

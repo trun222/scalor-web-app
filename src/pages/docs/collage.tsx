@@ -21,8 +21,8 @@ const CollageDocs: NextPage = () => {
         </Text>
 
         <Text bg="white" w="60%" p={4}>
-          The collage action takes two images and combines them into one to make a collage. The first uploadId will be the first image from left to right and the second uploadId
-          will be the second image.
+          The collage action takes two images and combines them into one. The first uploadId will be the first image from left to right and the second uploadId
+          will be the second image. If the image dimensions are radically different there will be white space to preserve the ratio of the largest image.
         </Text>
 
 

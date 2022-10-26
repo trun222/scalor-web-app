@@ -1,15 +1,15 @@
 
 import React from 'react';
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Grid, GridItem, Alert, AlertIcon } from '@chakra-ui/react'
 import SideBar from '@/src/components/common/SideBar';
 import Navbar from '@/src/components/Navbar';
 
 const docMenuItems = [
-  {
-    action: 'User',
-    type: 'GET',
-    link: '/docs/user'
-  },
+  // {
+  //   action: 'User',
+  //   type: 'GET',
+  //   link: '/docs/user'
+  // },
   {
     action: 'Upload',
     type: 'POST',
@@ -61,6 +61,12 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
     >
       <GridItem rowSpan={1} colSpan={12} bg='gray.50' px={10}>
         <Navbar />
+      </GridItem>
+      <GridItem rowSpan={1} colSpan={12} bg="gray.50">
+        <Alert status='warning' h="100%">
+          <AlertIcon />
+          Scalor is currently in Beta and working towards a stable release.
+        </Alert>
       </GridItem>
       <GridItem rowSpan={11} colSpan={2} bg='gray.200'>
         <SideBar menuItems={menuItems || docMenuItems} />

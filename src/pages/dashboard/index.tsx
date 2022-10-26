@@ -41,11 +41,11 @@ const DashboardPage: NextPage = () => {
 
   return (
     <NavBarLayout>
-      <VStack align="center" justify="center" spacing={6} h="100vh">
-        <Text fontSize="4xl">Membership ({(new Date(session?.usage?.subscriptionDate)).toUTCString()})</Text>
-        <Box bg="whiteAlpha.300" p={8}>
+      <VStack align="center" spacing={6} h="100vh" mt={20}>
+        {/* <Text fontSize="4xl">Membership ({(new Date(session?.usage?.subscriptionDate)).toUTCString()})</Text> */}
+        {/* <Box bg="whiteAlpha.300" p={8}>
           <Text fontSize="4xl" fontWeight="bold">Free</Text>
-        </Box>
+        </Box> */}
 
         <Text fontSize="4xl">Usage</Text>
         <Box bg="whiteAlpha.300" p={8}>

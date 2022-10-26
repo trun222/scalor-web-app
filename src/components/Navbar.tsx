@@ -48,7 +48,7 @@ export default function Navbar() {
             Scalor
           </Text>
         </NextLink>
-        <NextLink href='/docs/user' passHref>
+        <NextLink href='/docs/upload' passHref>
           <Button bg="none">
             Documentation
           </Button>
