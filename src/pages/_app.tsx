@@ -9,9 +9,7 @@ function MyApp({ Component, session, pageProps }: any) {
   const siteID: any = process?.env?.NEXT_PUBLIC_HOTJAR_SITE_ID!;
 
   useEffect(() => {
-    Hotjar.init(siteID, 6, {
-      debug: true
-    });
+    Hotjar.init(siteID, 6);
   });
 
   return (

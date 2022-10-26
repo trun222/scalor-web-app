@@ -3,6 +3,7 @@ import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google";
 import GitlabProvider from "next-auth/providers/gitlab";
 import DiscordProvider from "next-auth/providers/discord";
+import Axios from 'axios';
 const jwt = require("node-jsonwebtoken");
 
 export const authOptions = {
@@ -39,12 +40,28 @@ export const authOptions = {
     async session({ session }: any) {
       try {
         const accessToken = jwt.sign(session, process?.env?.NEXT_PUBLIC_TOKEN_PRIVATE_KEY);
-        // Add the Scalor user data to the session so that it is easily accessible
         const { contact, usage, token } = await fetch(process?.env?.NEXT_PUBLIC_API_ENDPOINT + '/scalorUser', { headers: { accessToken } }).then(data => data.json());
+
+        if (!token) {
+          const axios = Axios.create({
+            headers: { accessToken }
+          });
+          const createdUser: any = await axios.post(process?.env?.NEXT_PUBLIC_API_ENDPOINT + '/signup', {
+            email: session.user.email
+          })
+
+          session.contact = createdUser?.contact;
+          session.usage = createdUser?.usage;
+          session.token = createdUser?.token;
+          session.accessToken = accessToken;
+        }
+
+        // Add the Scalor user data to the session so that it is easily accessible
         session.contact = contact;
         session.usage = usage;
         session.token = token;
         session.accessToken = accessToken;
+
         return session
       } catch (e) {
         throw new Error('There is an issue with setting the Scalor session');

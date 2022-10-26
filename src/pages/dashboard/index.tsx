@@ -48,7 +48,7 @@ const DashboardPage: NextPage = () => {
 
         <Text fontSize="4xl">Usage</Text>
         <Box bg="whiteAlpha.300" p={8}>
-          <Text fontSize="4xl" fontWeight="bold">{session?.usage?.apiUsage} / 5000</Text>
+          <Text fontSize="4xl" fontWeight="bold">{session?.usage?.apiUsage} / 10,000</Text>
         </Box>
 
         <Text fontSize="4xl">API Token</Text>
