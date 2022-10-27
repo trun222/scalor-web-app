@@ -48,6 +48,17 @@ export default function Navbar() {
             Scalor
           </Text>
         </NextLink>
+        <NextLink href='/' passHref>
+          <Text
+            fontSize="4xl"
+            color='red.400'
+            fontWeight="bold"
+            cursor="pointer"
+          >
+            (BETA)
+          </Text>
+        </NextLink>
+
         <NextLink href='/docs/upload' passHref>
           <Button bg="none">
             Documentation
