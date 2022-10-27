@@ -20,7 +20,7 @@ const UploadDocs: NextPage = () => {
       </Text>
 
       <Description>
-        Upload an image so that you can perform other actions on it such as resizing, adjusting the quality (compression), sharpening the colors, and many more.
+        Upload an image (10MB limit per image) so that you can perform other actions on it such as resizing, adjusting the quality (compression), sharpening the colors, and many more.
         Once the image is uploaded you will receive an uploadId that you will use for all subsequent operations on the image. The images on the server get wiped daily.
       </Description>
 
