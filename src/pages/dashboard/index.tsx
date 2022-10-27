@@ -48,14 +48,24 @@ const DashboardPage: NextPage = () => {
 
         <Text fontSize="4xl">Usage</Text>
         <Box bg="whiteAlpha.300" p={8}>
-          <Text fontSize="4xl" fontWeight="bold">{session?.usage?.apiUsage} / 10,000</Text>
+          <Text textAlign="center"
+            fontSize={{
+              base: "2xl",
+              md: "4xl"
+            }} fontWeight="bold">{session?.usage?.apiUsage} / 10,000</Text>
         </Box>
 
         <Text fontSize="4xl">API Token</Text>
         <Box bg="whiteAlpha.300" p={8}>
-          <Text fontSize="4xl" fontWeight="bold">{session?.token}</Text>
+          <Text
+            textAlign="center"
+            fontSize={{
+              base: "2xl",
+              md: "4xl"
+            }}
+            fontWeight="bold">{session?.token}</Text>
         </Box>
-        <Text>Note: Keep this somewhere safe..</Text>
+        <Text color="red.400">Note: Keep this somewhere safe..</Text>
 
         {/* <Button onClick={handleManageStripeAccount}>
           Manage Account
