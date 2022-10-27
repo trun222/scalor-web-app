@@ -1,8 +1,10 @@
 
 import React from 'react';
-import { Grid, GridItem, VStack } from '@chakra-ui/react'
+import { Grid, GridItem, VStack, Menu, MenuItem, MenuList, MenuButton, Button, Badge } from '@chakra-ui/react';
+import { MdKeyboardArrowDown } from "react-icons/md";
 import SideBar from '@/src/components/common/SideBar';
 import Navbar from '@/src/components/Navbar';
+import NextLink from 'next/link';
 
 const docMenuItems = [
   // {
@@ -60,7 +62,26 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
       templateColumns='repeat(12, 1fr)'
     >
       <GridItem rowSpan={1} colSpan={12} bg='gray.50' px={10}>
-        <Navbar />
+        <Navbar>
+          <Menu>
+            <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.200" rightIcon={<MdKeyboardArrowDown />}>
+              API
+            </MenuButton>
+            <MenuList p={0}>
+              {docMenuItems.map((menuItem: any) => {
+                return (
+                  <NextLink key={menuItem.action} href={menuItem.link} passHref>
+                    <MenuItem>
+                      <Badge colorScheme="purple" mr={4}>{menuItem.type}</Badge>
+                      {menuItem.action}
+                    </MenuItem>
+                  </NextLink>
+                )
+              })
+              }
+            </MenuList>
+          </Menu>
+        </Navbar>
       </GridItem>
       <GridItem
         rowSpan={11}

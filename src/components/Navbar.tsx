@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { MdMenu, MdMenuBook, MdCode, MdHelpCenter, MdLogout, MdLogin } from "react-icons/md";
 
-export default function Navbar() {
+export default function Navbar({ children }: { children?: any }) {
   const { data: session } = useSession();
 
 
@@ -64,6 +64,8 @@ export default function Navbar() {
             </Text>
           </NextLink>
         </Flex>
+
+        {children}
 
         <Menu>
           <MenuButton
