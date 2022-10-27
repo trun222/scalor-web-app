@@ -6,6 +6,7 @@ import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import SideBarLayout from '@/src/components/layouts/SideBarLayout';
+import Description from '@/src/components/docs/Description';
 
 const SharpenDocs: NextPage = () => {
   return (
@@ -20,10 +21,10 @@ const SharpenDocs: NextPage = () => {
           Description
         </Text>
 
-        <Text bg="white" w="60%" p={4}>
+        <Description>
           The sharpen action adds sharper, more vibrant color contrast to an image. Similar to the effect of changing a television
           picture profile to Vivid. The colors will pop and the edges around an object will be more defined the higher the sharpen value.
-        </Text>
+        </Description>
 
         <JSONSection
           title="Headers"
@@ -49,7 +50,7 @@ const SharpenDocs: NextPage = () => {
         <JSONSection
           title="Web Response"
           json={{
-            "file": "data:image/jpg;base64, ${BASE64_DATA_STRING}"
+            "file": "data:image/jpg;base64, ${BASE64}"
           }}
         />
 

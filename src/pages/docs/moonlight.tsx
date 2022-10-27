@@ -6,6 +6,7 @@ import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import SideBarLayout from '@/src/components/layouts/SideBarLayout';
+import Description from '@/src/components/docs/Description';
 
 const MoonlightDocs: NextPage = () => {
   return (
@@ -20,9 +21,9 @@ const MoonlightDocs: NextPage = () => {
           Description
         </Text>
 
-        <Text bg="white" w="60%" p={4}>
+        <Description>
           The Moonlight action adds a cool moonlight effect to images without removing color from the image.
-        </Text>
+        </Description>
 
         <JSONSection
           title="Headers"
@@ -48,7 +49,7 @@ const MoonlightDocs: NextPage = () => {
         <JSONSection
           title="Web Response"
           json={{
-            "file": "data:image/jpg;base64, ${BASE64_DATA_STRING}"
+            "file": "data:image/jpg;base64, ${BASE64}"
           }}
         />
 

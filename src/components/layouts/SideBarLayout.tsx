@@ -62,10 +62,26 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
       <GridItem rowSpan={1} colSpan={12} bg='gray.50' px={10}>
         <Navbar />
       </GridItem>
-      <GridItem rowSpan={11} colSpan={2} bg='gray.200'>
+      <GridItem
+        rowSpan={11}
+        colSpan={2}
+        bg='gray.200'
+        display={{
+          base: 'none',
+          lg: 'grid'
+        }}
+      >
         <SideBar menuItems={menuItems || docMenuItems} />
       </GridItem>
-      <GridItem rowSpan={11} colSpan={10} bg='gray.300' overflowY="scroll">
+      <GridItem
+        rowSpan={11}
+        colSpan={{
+          base: 12,
+          lg: 10
+        }}
+        bg='gray.300'
+        overflowY="scroll"
+      >
         {children}
       </GridItem>
     </Grid>

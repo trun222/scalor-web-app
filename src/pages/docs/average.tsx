@@ -2,6 +2,7 @@
 import React from 'react';
 import type { NextPage } from 'next'
 import { VStack, Text } from '@chakra-ui/react'
+import Description from '@/src/components/docs/Description';
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
@@ -20,14 +21,15 @@ const AverageDocs: NextPage = () => {
           Description
         </Text>
 
-        <Text bg="white" w="60%" p={4}>
+        <Description>
           The color average method takes the average of all of the image pixels colors and applies that to the entire image. i.e. if there are many dark or light pixels that will effect
           the color of the rest of the pixels within the image.
-        </Text>
+        </Description>
 
         <JSONSection
           title="Headers"
           json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
+          w="70%"
         />
 
         <JSONSection
@@ -49,8 +51,9 @@ const AverageDocs: NextPage = () => {
         <JSONSection
           title="Web Response"
           json={{
-            "file": "data:image/jpg;base64, ${BASE64_DATA_STRING}"
+            "file": "data:image/jpg;base64, ${BASE64}"
           }}
+          w="70%"
         />
 
         <JSONSection

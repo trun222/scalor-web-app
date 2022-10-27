@@ -7,7 +7,11 @@ export default function PropertiesSection({ properties }: { properties: any }) {
         Properties
       </Text>
 
-      <Box w="60%" bg="whiteAlpha.500">
+      <Box w={{
+        base: '100%',
+        sm: '',
+        md: '70%'
+      }} maxW="700px" bg="white">
         <List spacing={3} p={4}>
           {properties.map((h: any) => <ListItem key={h.key}>
             {h.key} <Badge colorScheme={'red'} ml={4}>{h.value}</Badge> {h.note ? <Badge colorScheme={'purple'} ml={4}>{h.note}</Badge> : ''}

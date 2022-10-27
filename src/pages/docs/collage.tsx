@@ -6,6 +6,7 @@ import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import SideBarLayout from '@/src/components/layouts/SideBarLayout';
+import Description from '@/src/components/docs/Description';
 
 const CollageDocs: NextPage = () => {
   return (
@@ -20,10 +21,12 @@ const CollageDocs: NextPage = () => {
           Description
         </Text>
 
-        <Text bg="white" w="60%" p={4}>
+        <Description>
           The collage action takes two images and combines them into one. The first uploadId will be the first image from left to right and the second uploadId
           will be the second image. If the image dimensions are radically different there will be white space to preserve the ratio of the largest image.
-        </Text>
+        </Description>
+
+
 
 
         <JSONSection
@@ -50,7 +53,7 @@ const CollageDocs: NextPage = () => {
         <JSONSection
           title="Web Response"
           json={{
-            "file": "data:image/jpg;base64, ${BASE64_DATA_STRING}"
+            "file": "data:image/jpg;base64, ${BASE64}"
           }}
         />
 

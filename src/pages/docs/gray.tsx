@@ -6,6 +6,7 @@ import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import SideBarLayout from '@/src/components/layouts/SideBarLayout';
+import Description from '@/src/components/docs/Description';
 
 const GrayDocs: NextPage = () => {
   return (
@@ -20,9 +21,9 @@ const GrayDocs: NextPage = () => {
           Description
         </Text>
 
-        <Text bg="white" w="60%" p={4}>
+        <Description>
           The gray method applies gray scale to an image or what most people consider a back and white image.
-        </Text>
+        </Description>
 
         <JSONSection
           title="Headers"
@@ -47,7 +48,7 @@ const GrayDocs: NextPage = () => {
         <JSONSection
           title="Web Response"
           json={{
-            "file": "data:image/jpg;base64, ${BASE64_DATA_STRING}"
+            "file": "data:image/jpg;base64, ${BASE64}"
           }}
         />
 

@@ -5,6 +5,7 @@ import { VStack, Text } from '@chakra-ui/react'
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import SideBarLayout from '@/src/components/layouts/SideBarLayout';
+import Description from '@/src/components/docs/Description';
 
 const UploadDocs: NextPage = () => {
   return (
@@ -19,10 +20,10 @@ const UploadDocs: NextPage = () => {
           Description
         </Text>
 
-        <Text bg="white" w="60%" p={4}>
+        <Description>
           Upload an image so that you can perform other actions on it such as resizing, adjusting the quality (compression), sharpening the colors, and many more.
           Once the image is uploaded you will receive an uploadId that you will use for all subsequent operations on the image. The images on the server get wiped daily.
-        </Text>
+        </Description>
 
         <JSONSection
           title="Headers"

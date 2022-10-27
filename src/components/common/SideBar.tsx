@@ -13,7 +13,7 @@ export default function SideBar({ menuItems }: Props) {
   const activeRoute = router?.pathname;
 
   return (
-    <List spacing={3} p={4}>
+    <List spacing={3} p={4} minW="180px">
       {menuItems.map((item: any) =>
         <ListItem key={item.action}>
           <NextLink href={item.link} passHref>

@@ -6,6 +6,7 @@ import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import SideBarLayout from '@/src/components/layouts/SideBarLayout';
+import Description from '@/src/components/docs/Description';
 
 const QualityDocs: NextPage = () => {
   return (
@@ -20,12 +21,12 @@ const QualityDocs: NextPage = () => {
           Description
         </Text>
 
-        <Text bg="white" w="60%" p={4}>
+        <Description>
           The quality action allows you to adjust the quality of the image uploaded from 1% to 100%.
           You can use this action to get high quality compression. If you set the quality to 50% and the original
           image is fairly large in size you will be amazed to see that there is almost no difference visually in quality, but huge
           differences in file sizes.
-        </Text>
+        </Description>
 
         <JSONSection
           title="Headers"
@@ -51,7 +52,7 @@ const QualityDocs: NextPage = () => {
         <JSONSection
           title="Web Response"
           json={{
-            "file": "data:image/jpg;base64, ${BASE64_DATA_STRING}"
+            "file": "data:image/jpg;base64, ${BASE64}"
           }}
         />
 
