@@ -13,7 +13,9 @@ export default function JSONSection({ title, json, w }: { title: string, json: a
           base: '100%',
           sm: '',
           md: w || '70%'
-        }} maxW="700px">
+        }}
+        maxW="700px"
+      >
         <PrettyJSON
           jsonObject={json}
           colors={{

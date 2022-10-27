@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Grid, GridItem, VStack } from '@chakra-ui/react'
 import SideBar from '@/src/components/common/SideBar';
 import Navbar from '@/src/components/Navbar';
 
@@ -79,10 +79,21 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
           base: 12,
           lg: 10
         }}
-        bg='gray.300'
+        bg='gray.200'
         overflowY="scroll"
       >
-        {children}
+        <VStack
+          align={{ base: 'center', lg: 'start' }}
+          justify="center"
+          spacing={6}
+          p={{
+            base: 1,
+            md: 2,
+            lg: 6
+          }}
+        >
+          {children}
+        </VStack>
       </GridItem>
     </Grid>
   );
