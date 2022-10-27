@@ -5,6 +5,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import SideBar from '@/src/components/common/SideBar';
 import Navbar from '@/src/components/Navbar';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router'
 
 const docMenuItems = [
   // {
@@ -20,41 +21,50 @@ const docMenuItems = [
   {
     action: 'Resize',
     type: 'POST',
-    link: '/docs/resize'
+    link: '/docs/resize',
+    demo: '/demo/resize'
   },
   {
     action: 'Quality',
     type: 'POST',
-    link: '/docs/quality'
+    link: '/docs/quality',
+    demo: '/demo/quality'
   },
   {
     action: 'Moonlight',
     type: 'POST',
-    link: '/docs/moonlight'
+    link: '/docs/moonlight',
+    demo: '/demo/moonlight'
   },
   {
     action: 'Sharpen',
     type: 'POST',
-    link: '/docs/sharpen'
+    link: '/docs/sharpen',
+    demo: '/demo/sharpen'
   },
   {
-    action: 'Average',
+    action: 'Color Balance',
     type: 'POST',
-    link: '/docs/average'
+    link: '/docs/average',
+    demo: '/demo/color-balance'
   },
   {
     action: 'Gray',
     type: 'POST',
-    link: '/docs/gray'
+    link: '/docs/gray',
+    demo: '/demo/gray'
   },
   {
     action: 'Collage',
     type: 'POST',
-    link: '/docs/collage'
+    link: '/docs/collage',
+    demo: '/demo/collage'
   }
 ];
 
 export default function SideBarLayout({ menuItems, children }: { menuItems?: any, children: any }) {
+  const router = useRouter();
+
   return (
     <Grid
       h='100vh'
@@ -63,24 +73,49 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
     >
       <GridItem rowSpan={1} colSpan={12} bg='gray.50' px={10}>
         <Navbar>
-          <Menu>
-            <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.200" rightIcon={<MdKeyboardArrowDown />}>
-              API
-            </MenuButton>
-            <MenuList p={0}>
-              {docMenuItems.map((menuItem: any) => {
-                return (
-                  <NextLink key={menuItem.action} href={menuItem.link} passHref>
-                    <MenuItem>
-                      <Badge colorScheme="purple" mr={4}>{menuItem.type}</Badge>
-                      {menuItem.action}
-                    </MenuItem>
-                  </NextLink>
-                )
-              })
-              }
-            </MenuList>
-          </Menu>
+          {router.pathname.includes('/docs') &&
+            <Menu>
+              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.200" rightIcon={<MdKeyboardArrowDown />}>
+                API
+              </MenuButton>
+              <MenuList p={0}>
+                {docMenuItems.map((menuItem: any) => {
+                  return (
+                    <NextLink key={menuItem.action} href={menuItem.link} passHref>
+                      <MenuItem>
+                        <Badge colorScheme="purple" mr={4}>{menuItem.type}</Badge>
+                        {menuItem.action}
+                      </MenuItem>
+                    </NextLink>
+                  )
+                })
+                }
+              </MenuList>
+            </Menu>
+          }
+          {router.pathname.includes('/demo') &&
+            <Menu>
+              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.200" rightIcon={<MdKeyboardArrowDown />}>
+                Demo
+              </MenuButton>
+              <MenuList p={0}>
+                {docMenuItems.map((menuItem: any) => {
+                  if (menuItem.action === 'Upload') {
+                    return;
+                  }
+
+                  return (
+                    <NextLink key={menuItem.action} href={menuItem.demo} passHref>
+                      <MenuItem>
+                        {menuItem.action}
+                      </MenuItem>
+                    </NextLink>
+                  )
+                })
+                }
+              </MenuList>
+            </Menu>
+          }
         </Navbar>
       </GridItem>
       <GridItem

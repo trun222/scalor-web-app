@@ -53,7 +53,7 @@ const GrayActionPage: NextPage = () => {
         templateRows='repeat(12, 1fr)'
         templateColumns='repeat(12, 1fr)'
       >
-        <GridItem rowSpan={12} colSpan={9} px={10}>
+        <GridItem rowSpan={7} colSpan={12}>
           <Text fontSize="4xl" fontWeight="bold" color="white">
             Gray
           </Text>
