@@ -83,7 +83,7 @@ export default function Navbar() {
                 Demo
               </MenuItem>
             </NextLink>
-            <NextLink href='mailto:scalor@protonmail.com'>
+            <NextLink href='mailto:scalor-api@protonmail.com'>
               <MenuItem icon={<MdHelpCenter fontSize="26px" />}>
                 Support
               </MenuItem>
@@ -166,7 +166,7 @@ export default function Navbar() {
             Pricing
           </Button>
         </NextLink> */}
-          <NextLink href='mailto:scalor@protonmail.com'>
+          <NextLink href='mailto:scalor-api@protonmail.com'>
             <Button bg="none">
               Support
             </Button>
