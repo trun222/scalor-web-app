@@ -73,22 +73,21 @@ export default function Navbar() {
             variant='outline'
           />
           <MenuList p={0}>
-            <MenuItem icon={<MdMenuBook fontSize="26px" />}>
-              <NextLink href='/docs/upload' passHref>
+            <NextLink href='/docs/upload' passHref>
+              <MenuItem icon={<MdMenuBook fontSize="26px" />}>
                 Documentation
-              </NextLink>
-            </MenuItem>
-            <MenuItem icon={<MdCode fontSize="26px" />}>
-              <NextLink href='/demo/resize' passHref>
+              </MenuItem>
+            </NextLink>
+            <NextLink href='/demo/resize' passHref>
+              <MenuItem icon={<MdCode fontSize="26px" />}>
                 Demo
-              </NextLink>
-            </MenuItem>
-            <MenuItem icon={<MdHelpCenter fontSize="26px" />}>
-              <NextLink href='mailto:scalor@protonmail.com'>
+              </MenuItem>
+            </NextLink>
+            <NextLink href='mailto:scalor@protonmail.com'>
+              <MenuItem icon={<MdHelpCenter fontSize="26px" />}>
                 Support
-              </NextLink>
-            </MenuItem>
-
+              </MenuItem>
+            </NextLink>
 
             {session &&
               <MenuItem>
