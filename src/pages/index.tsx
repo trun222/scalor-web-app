@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, GridItem, VStack, HStack, Text, Box, Center } from '@chakra-ui/react'
+import { Grid, GridItem, HStack, Text, Box, Center } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import Navbar from '@/src/components/Navbar';
 import LandingSection from '@/src/components/LandingSection';
@@ -37,6 +37,7 @@ const HomePage: NextPage = () => {
               src="https://scalor.s3.amazonaws.com/site-examples/compress_before.jpeg"
               height="450px"
               width="550px"
+              alt="Before Compression"
             />
 
             <Text>Full Resolution (3.1 MB)</Text>
@@ -49,6 +50,7 @@ const HomePage: NextPage = () => {
               src="https://scalor.s3.amazonaws.com/site-examples/compress_after.jpg"
               height="450px"
               width="550px"
+              alt="After Compression"
             />
 
             <Text>Lossy Compressed (955 KB) at 50% compression</Text>
@@ -74,6 +76,7 @@ const HomePage: NextPage = () => {
               src="https://scalor.s3.amazonaws.com/site-examples/resize_before.jpg"
               height="450px"
               width="550px"
+              alt="Before Resize"
             />
 
             <Text>3264x2448 (2.6 MB)</Text>
@@ -86,6 +89,7 @@ const HomePage: NextPage = () => {
               src="https://scalor.s3.amazonaws.com/site-examples/resize_after.jpg"
               height="96px"
               width="128px"
+              alt="After Resize"
             />
 
             <Text>96x128 (12 KB)</Text>
@@ -111,6 +115,7 @@ const HomePage: NextPage = () => {
               src="https://scalor.s3.amazonaws.com/site-examples/enhance_before.jpeg"
               height="450px"
               width="550px"
+              alt="Before Enhance"
             />
 
             <Text>Non-Vibrant</Text>
@@ -123,6 +128,7 @@ const HomePage: NextPage = () => {
               src="https://scalor.s3.amazonaws.com/site-examples/enhance_after.jpg"
               height="450px"
               width="550px"
+              alt="After Enhance"
             />
 
             <Text>Vibrant</Text>
