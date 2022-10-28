@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Grid, GridItem, VStack, Menu, MenuItem, MenuList, MenuButton, Button, Badge } from '@chakra-ui/react';
-import { MdKeyboardArrowDown } from "react-icons/md";
 import SideBar from '@/src/components/common/SideBar';
 import Navbar from '@/src/components/Navbar';
 import NextLink from 'next/link';
@@ -71,11 +70,14 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
       templateRows='repeat(12, 1fr)'
       templateColumns='repeat(12, 1fr)'
     >
-      <GridItem rowSpan={1} colSpan={12} bg='gray.50' px={5}>
+      <GridItem rowSpan={1} colSpan={12} bg='gray.50' px={{
+        base: 2,
+        md: 5
+      }}>
         <Navbar>
           {router.pathname.includes('/docs') &&
             <Menu>
-              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.200" rightIcon={<MdKeyboardArrowDown />}>
+              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.200">
                 API
               </MenuButton>
               <MenuList p={0}>
@@ -95,7 +97,7 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
           }
           {router.pathname.includes('/demo') &&
             <Menu>
-              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.200" rightIcon={<MdKeyboardArrowDown />}>
+              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.200">
                 Demo
               </MenuButton>
               <MenuList p={0}>
