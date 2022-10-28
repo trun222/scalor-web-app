@@ -43,7 +43,7 @@ const LandingSection = () => {
             fontWeight="semibold"
             color="white"
           >
-            Focus on your code, not resizing images.
+            Focus on your code, not editing images.
           </Text>
 
           <HStack spacing={4} mt={10}>
