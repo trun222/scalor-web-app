@@ -71,7 +71,7 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
       templateRows='repeat(12, 1fr)'
       templateColumns='repeat(12, 1fr)'
     >
-      <GridItem rowSpan={1} colSpan={12} bg='gray.50' px={10}>
+      <GridItem rowSpan={1} colSpan={12} bg='gray.50' px={5}>
         <Navbar>
           {router.pathname.includes('/docs') &&
             <Menu>

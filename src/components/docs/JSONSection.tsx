@@ -11,10 +11,10 @@ export default function JSONSection({ title, json, w }: { title: string, json: a
         p={4}
         w={{
           base: '100%',
-          sm: '',
           md: w || '70%'
         }}
         maxW="700px"
+        overflowX="scroll"
       >
         <PrettyJSON
           jsonObject={json}

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Text, Button, HStack, Box, Menu, MenuItem, MenuList, MenuButton, IconButton, Flex
+  Text, Button, HStack, Box, Menu, MenuItem, MenuList, MenuButton, IconButton
 } from '@chakra-ui/react'
 import NextLink from 'next/link';
 import Image from 'next/image';
@@ -39,31 +39,29 @@ export default function Navbar({ children }: { children?: any }) {
 
   const MobileNav = () => {
     return (
-      <HStack alignItems="center" justify="space-between" h="100%">
-        <Flex>
-          <NextLink href='/' passHref>
-            <Text
-              fontSize="4xl"
-              letterSpacing={10}
-              _hover={{
-                color: 'gray.600'
-              }}
-              cursor="pointer"
-            >
-              Scalor
-            </Text>
-          </NextLink>
-          <NextLink href='/' passHref>
-            <Text
-              fontSize="4xl"
-              color='red.400'
-              fontWeight="bold"
-              cursor="pointer"
-            >
-              (BETA)
-            </Text>
-          </NextLink>
-        </Flex>
+      <HStack align="center" alignItems="center" justify="space-between" h="100%">
+        <NextLink href='/' passHref>
+          <Text
+            fontSize="4xl"
+            letterSpacing={10}
+            _hover={{
+              color: 'gray.600'
+            }}
+            cursor="pointer"
+          >
+            Scalor
+          </Text>
+        </NextLink>
+        <NextLink href='/' passHref>
+          <Text
+            fontSize="2xl"
+            color='red.400'
+            fontWeight="bold"
+            cursor="pointer"
+          >
+            (BETA)
+          </Text>
+        </NextLink>
 
         {children}
 
@@ -128,8 +126,8 @@ export default function Navbar({ children }: { children?: any }) {
 
   const DesktopNav = () => {
     return (
-      <HStack alignItems="center" justify="space-between" h="100%">
-        <HStack spacing={4}>
+      <HStack align="center" alignItems="center" justify="space-between" h="100%">
+        <HStack spacing={4} align="center">
           <NextLink href='/' passHref>
             <Text
               fontSize="4xl"
@@ -144,7 +142,7 @@ export default function Navbar({ children }: { children?: any }) {
           </NextLink>
           <NextLink href='/' passHref>
             <Text
-              fontSize="4xl"
+              fontSize="2xl"
               color='red.400'
               fontWeight="bold"
               cursor="pointer"

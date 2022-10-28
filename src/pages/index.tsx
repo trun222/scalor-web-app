@@ -11,7 +11,7 @@ const Dashboard: NextPage = () => {
       templateRows='repeat(12, 1fr)'
       templateColumns='repeat(12, 1fr)'
     >
-      <GridItem rowSpan={1} colSpan={12} bg="gray.50" px={10}>
+      <GridItem rowSpan={1} colSpan={12} bg="gray.50" px={5}>
         <Navbar />
       </GridItem>
       <GridItem rowSpan={11} colSpan={12} bg='gray.300'>
