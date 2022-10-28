@@ -8,13 +8,15 @@ export default function JSONSection({ title, json, w }: { title: string, json: a
         {title}
       </Text>
       <Box bg="white"
-        p={4}
+        p={{
+          base: 1,
+          md: 4
+        }}
         w={{
           base: '100%',
-          md: w || '70%'
+          md: w || 'auto'
         }}
         maxW="700px"
-        overflowX="scroll"
       >
         <PrettyJSON
           jsonObject={json}
