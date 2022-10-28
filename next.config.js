@@ -10,7 +10,8 @@ const moduleExports = {
       'avatars.githubusercontent.com',
       'lh3.googleusercontent.com',
       'secure.gravatar.com',
-      'cdn.discordapp.com'
+      'cdn.discordapp.com',
+      'scalor.s3.amazonaws.com'
     ],
   },
   sentry: {
