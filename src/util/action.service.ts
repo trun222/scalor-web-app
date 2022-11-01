@@ -11,7 +11,7 @@ export const handleImageMutation = async ({ request, onIsLoaded, onConvertedImag
       description: `Image ${request.route} sucessfully.`,
       status: 'success',
       duration: 5000,
-      position: 'top-left'
+      position: 'bottom-left'
     })
   }
   catch (e) {
@@ -21,7 +21,7 @@ export const handleImageMutation = async ({ request, onIsLoaded, onConvertedImag
       description: `Image ${request.route} failed.`,
       status: 'error',
       duration: 5000,
-      position: 'top-left'
+      position: 'bottom-left'
     })
   }
 }
