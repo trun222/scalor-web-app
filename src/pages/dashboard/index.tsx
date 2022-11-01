@@ -3,10 +3,11 @@ import React from "react";
 import {
   VStack,
   Text,
-  Box,
 } from "@chakra-ui/react";
 import NavBarLayout from "@/src/components/layouts/NavBarLayout";
 import { useSession } from 'next-auth/react';
+import CopyClipboard from "@/src/components/common/CopyClipboard";
+import Description from "@/src/components/docs/Description";
 // import axios from 'axios';
 // import Router from "next/router";
 // import type { Session } from "next-auth/core/types";
@@ -47,16 +48,22 @@ const DashboardPage: NextPage = () => {
         </Box> */}
 
         <Text fontSize="4xl">Usage</Text>
-        <Box bg="whiteAlpha.300" p={8}>
+
+        <Description>
           <Text textAlign="center"
             fontSize={{
               base: "2xl",
               md: "4xl"
-            }} fontWeight="bold">{session?.usage?.apiUsage} / 10,000</Text>
-        </Box>
+            }}>{session?.usage?.apiUsage} / 10,000</Text>
+        </Description>
 
         <Text fontSize="4xl">API Token</Text>
-        <Box bg="whiteAlpha.300" p={8}>
+
+        <CopyClipboard
+          text={session?.token}
+        />
+
+        {/* <Box bg="whiteAlpha.300" p={8}>
           <Text
             textAlign="center"
             fontSize={{
@@ -64,7 +71,7 @@ const DashboardPage: NextPage = () => {
               md: "4xl"
             }}
             fontWeight="bold">{session?.token}</Text>
-        </Box>
+        </Box> */}
         <Text color="red.400">Note: Keep this somewhere safe..</Text>
 
         {/* <Button onClick={handleManageStripeAccount}>

@@ -7,6 +7,7 @@ import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import SideBarLayout from '@/src/components/layouts/SideBarLayout';
+import CopyClipboard from '@/src/components/common/CopyClipboard';
 
 const AverageDocs: NextPage = () => {
   return (
@@ -16,11 +17,9 @@ const AverageDocs: NextPage = () => {
         method="POST"
       />
 
-      <Description>
-        <Text fontSize="2xl">
-          {process?.env?.NEXT_PUBLIC_API_ENDPOINT}/average
-        </Text>
-      </Description>
+      <CopyClipboard
+        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/average`}
+      />
 
       <Text fontSize="4xl" fontWeight="thin">
         Description

@@ -6,6 +6,7 @@ import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import SideBarLayout from '@/src/components/layouts/SideBarLayout';
 import Description from '@/src/components/docs/Description';
+import CopyClipboard from '@/src/components/common/CopyClipboard';
 
 const UploadDocs: NextPage = () => {
   return (
@@ -15,11 +16,9 @@ const UploadDocs: NextPage = () => {
         method="POST"
       />
 
-      <Description>
-        <Text fontSize="2xl">
-          {process?.env?.NEXT_PUBLIC_API_ENDPOINT}/upload
-        </Text>
-      </Description>
+      <CopyClipboard
+        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/upload`}
+      />
 
       <Text fontSize="4xl" fontWeight="thin">
         Description

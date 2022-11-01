@@ -7,6 +7,7 @@ import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import SideBarLayout from '@/src/components/layouts/SideBarLayout';
 import Description from '@/src/components/docs/Description';
+import CopyClipboard from '@/src/components/common/CopyClipboard';
 
 const GrayDocs: NextPage = () => {
   return (
@@ -16,11 +17,9 @@ const GrayDocs: NextPage = () => {
         method="POST"
       />
 
-      <Description>
-        <Text fontSize="2xl">
-          {process?.env?.NEXT_PUBLIC_API_ENDPOINT}/gray
-        </Text>
-      </Description>
+      <CopyClipboard
+        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/gray`}
+      />
 
       <Text fontSize="4xl" fontWeight="thin">
         Description

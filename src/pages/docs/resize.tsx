@@ -7,6 +7,7 @@ import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import SideBarLayout from '@/src/components/layouts/SideBarLayout';
 import Description from '@/src/components/docs/Description';
+import CopyClipboard from '@/src/components/common/CopyClipboard';
 
 const ResizeDocs: NextPage = () => {
   return (
@@ -16,11 +17,9 @@ const ResizeDocs: NextPage = () => {
         method="POST"
       />
 
-      <Description>
-        <Text fontSize="2xl">
-          {process?.env?.NEXT_PUBLIC_API_ENDPOINT}/resize
-        </Text>
-      </Description>
+      <CopyClipboard
+        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/resize`}
+      />
 
       <Text fontSize="4xl" fontWeight="thin">
         Description
