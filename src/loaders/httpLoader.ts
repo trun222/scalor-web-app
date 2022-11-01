@@ -10,6 +10,6 @@ export default async function httpLoader({ route, payload, token }: any) {
         }
       }))?.data
   } catch (e) {
-    throw new Error(e);
+    throw new Error('Failed to fetch data');
   }
 }
