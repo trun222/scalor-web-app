@@ -44,7 +44,7 @@ const DemoUploader = ({
         description: "Image upload successful.",
         status: 'success',
         duration: 5000,
-        position: 'top-left'
+        position: 'bottom-left'
       })
     }
     catch (e) {
@@ -53,7 +53,7 @@ const DemoUploader = ({
         description: "Image upload failed.",
         status: 'error',
         duration: 5000,
-        position: 'top-left'
+        position: 'bottom-left'
       })
     }
   };

@@ -15,6 +15,12 @@ const UploadDocs: NextPage = () => {
         method="POST"
       />
 
+      <Description>
+        <Text fontSize="2xl">
+          {process?.env?.NEXT_PUBLIC_API_ENDPOINT}/upload
+        </Text>
+      </Description>
+
       <Text fontSize="4xl" fontWeight="thin">
         Description
       </Text>

@@ -10,6 +10,6 @@ export default async function httpLoader({ route, payload, token }: any) {
         }
       }))?.data
   } catch (e) {
-    return e;
+    throw new Error(e);
   }
 }

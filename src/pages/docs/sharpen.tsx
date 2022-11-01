@@ -16,6 +16,12 @@ const SharpenDocs: NextPage = () => {
         method="POST"
       />
 
+      <Description>
+        <Text fontSize="2xl">
+          {process?.env?.NEXT_PUBLIC_API_ENDPOINT}/sharpen
+        </Text>
+      </Description>
+
       <Text fontSize="4xl" fontWeight="thin">
         Description
       </Text>
