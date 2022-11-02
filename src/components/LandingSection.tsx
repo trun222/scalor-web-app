@@ -28,6 +28,7 @@ const LandingSection = () => {
               sm: '4xl',
               md: '5xl',
             }}
+            className="fontBold"
             fontWeight="bold"
             color="white"
           >

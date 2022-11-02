@@ -4,7 +4,7 @@ import PrettyJSON from 'react-prettify-json';
 export default function JSONSection({ title, json, w }: { title: string, json: any, w?: string }) {
   return (
     <>
-      <Text fontSize="4xl" fontWeight="thin">
+      <Text fontSize="3xl" className="fontBold">
         {title}
       </Text>
       <Box bg="white"

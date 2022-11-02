@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { NextPage } from 'next'
 import { Text } from '@chakra-ui/react'
@@ -20,7 +19,7 @@ const UploadDocs: NextPage = () => {
         text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/upload`}
       />
 
-      <Text fontSize="4xl" fontWeight="thin">
+      <Text fontSize="3xl" className="fontBold">
         Description
       </Text>
 

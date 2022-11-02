@@ -11,10 +11,10 @@ const TermsAndConditions: NextPage = () => {
       templateRows='repeat(12, 1fr)'
       templateColumns='repeat(12, 1fr)'
     >
-      <GridItem rowSpan={1} colSpan={12} bg="gray.50" px={5}>
+      <GridItem rowSpan={1} colSpan={12} bg="gray.100" px={5}>
         <Navbar />
       </GridItem>
-      <GridItem rowSpan={11} colSpan={12} bg='gray.300'>
+      <GridItem rowSpan={11} colSpan={12} bg='gray.100'>
       </GridItem>
       <GridItem rowSpan={1} colSpan={12} bg='gray.200' p={4}>
         <Footer />

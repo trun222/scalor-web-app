@@ -5,25 +5,35 @@ import {
   Box,
   Button,
   VStack,
-  Text
+  HStack,
+  Text,
 } from "@chakra-ui/react";
+import Image from "next/image";
 
 export default function SignIn({ providers }: any) {
   return (
-    <VStack h="100vh" w="100vw" spacing={12} pt={20} bg="gray.300">
-      <Text
-        fontSize="8xl"
-        letterSpacing={10}
-        _hover={{
-          color: 'gray.600'
-        }}
-      >
-        Scalor
-      </Text>
+    <VStack h="100vh" w="100vw" spacing={12} pt={20} bg="gray.100">
+      <HStack justify="center" spacing={4}>
+        <Image
+          src="/images/scalor-logo.svg"
+          height="78px"
+          width="78px"
+          alt="Scalor Logo"
+        />
+        <Text
+          fontSize="7xl"
+          className="fontBold"
+          _hover={{
+            color: 'gray.600'
+          }}
+        >
+          Scalor
+        </Text>
+      </HStack>
 
       <Box bg="white" h="400px" w="400px" borderRadius="md" p={10}>
         <VStack justify="center">
-          <Text fontSize="4xl" mb={4}>Welcome</Text>
+          <Text fontSize="4xl" className="fontBold" mb={4}>Welcome</Text>
 
           {Object.values(providers).map((provider: any) => {
             return (

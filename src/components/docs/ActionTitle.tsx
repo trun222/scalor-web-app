@@ -6,7 +6,7 @@ export default function ActionTitle({ action, method }: { action: string, method
       <Badge colorScheme={method === 'GET' ? 'orange' : 'purple'}>
         <Text fontSize="3xl">{method}</Text>
       </Badge>
-      <Text fontSize="5xl" fontWeight="light">{action}</Text>
+      <Text fontSize="4xl" className="fontBold">{action}</Text>
     </HStack>
   );
 }

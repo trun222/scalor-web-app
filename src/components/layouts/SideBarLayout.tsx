@@ -70,14 +70,14 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
       templateRows='repeat(12, 1fr)'
       templateColumns='repeat(12, 1fr)'
     >
-      <GridItem rowSpan={1} colSpan={12} bg='gray.50' px={{
+      <GridItem rowSpan={1} colSpan={12} bg='pink.400' px={{
         base: 2,
         md: 5
       }}>
         <Navbar>
           {router.pathname.includes('/docs') &&
             <Menu>
-              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.200">
+              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.100">
                 API
               </MenuButton>
               <MenuList p={0}>
@@ -97,7 +97,7 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
           }
           {router.pathname.includes('/demo') &&
             <Menu>
-              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.200">
+              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.100">
                 Demo
               </MenuButton>
               <MenuList p={0}>
@@ -123,7 +123,7 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
       <GridItem
         rowSpan={11}
         colSpan={2}
-        bg='gray.200'
+        bg='gray.100'
         display={{
           base: 'none',
           lg: 'grid'
@@ -137,7 +137,7 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
           base: 12,
           lg: 10
         }}
-        bg='gray.200'
+        bg='gray.100'
         overflowY="scroll"
       >
         <VStack

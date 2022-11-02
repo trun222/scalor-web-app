@@ -40,28 +40,38 @@ export default function Navbar({ children }: { children?: any }) {
   const MobileNav = () => {
     return (
       <HStack align="center" alignItems="center" justify="space-between" h="100%">
-        <NextLink href='/' passHref>
-          <Text
-            fontSize="4xl"
-            letterSpacing={10}
-            _hover={{
-              color: 'gray.600'
-            }}
-            cursor="pointer"
-          >
-            Scalor
-          </Text>
-        </NextLink>
-        <NextLink href='/' passHref>
-          <Text
-            fontSize="2xl"
-            color='red.400'
-            fontWeight="bold"
-            cursor="pointer"
-          >
-            (BETA)
-          </Text>
-        </NextLink>
+        <HStack spacing={4}>
+          <NextLink href='/' passHref>
+            <Image
+              src="/images/scalor-logo.svg"
+              height="38px"
+              width="38px"
+              alt="Scalor Logo"
+            />
+          </NextLink>
+          <NextLink href='/' passHref>
+            <Text
+              fontSize="4xl"
+              _hover={{
+                color: 'gray.600'
+              }}
+              cursor="pointer"
+              className="fontBold"
+            >
+              Scalor
+            </Text>
+          </NextLink>
+          <NextLink href='/' passHref>
+            <Text
+              fontSize="2xl"
+              color='white'
+              fontWeight="bold"
+              cursor="pointer"
+            >
+              (BETA)
+            </Text>
+          </NextLink>
+        </HStack>
 
         {children}
 
@@ -126,16 +136,24 @@ export default function Navbar({ children }: { children?: any }) {
 
   const DesktopNav = () => {
     return (
-      <HStack align="center" alignItems="center" justify="space-between" h="100%">
+      <HStack align="center" alignItems="center" justify="space-between" h="100%" p={2}>
         <HStack spacing={4} align="center">
+          <NextLink href='/' passHref>
+            <Image
+              src="/images/scalor-logo.svg"
+              height="38px"
+              width="38px"
+              alt="Scalor Logo"
+            />
+          </NextLink>
           <NextLink href='/' passHref>
             <Text
               fontSize="4xl"
-              letterSpacing={10}
               _hover={{
                 color: 'gray.600'
               }}
               cursor="pointer"
+              className="fontBold"
             >
               Scalor
             </Text>
@@ -143,7 +161,7 @@ export default function Navbar({ children }: { children?: any }) {
           <NextLink href='/' passHref>
             <Text
               fontSize="2xl"
-              color='red.400'
+              color='white'
               fontWeight="bold"
               cursor="pointer"
             >

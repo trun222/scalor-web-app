@@ -21,7 +21,7 @@ const MoonlightDocs: NextPage = () => {
         text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/moonlight`}
       />
 
-      <Text fontSize="4xl" fontWeight="thin">
+      <Text fontSize="3xl" className="fontBold">
         Description
       </Text>
 
