@@ -187,7 +187,7 @@ export default function Navbar({ children }: { children?: any }) {
           base: 'none',
           lg: 'block'
         }}
-        pt="2 "
+        pt="2"
       >
         <DesktopNav />
       </Box>

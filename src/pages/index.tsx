@@ -4,6 +4,7 @@ import type { NextPage } from 'next'
 import Navbar from '@/src/components/Navbar';
 import LandingSection from '@/src/components/LandingSection';
 import Image from 'next/image';
+import Footer from '@/src/components/Footer';
 
 const HomePage: NextPage = () => {
   return (
@@ -135,7 +136,10 @@ const HomePage: NextPage = () => {
           </Box>
         </HStack>
       </GridItem>
-    </Grid >
+      <GridItem rowSpan={1} colSpan={12} bg='gray.200' p={4}>
+        <Footer />
+      </GridItem>
+    </Grid>
   )
 }
 
