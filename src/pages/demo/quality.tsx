@@ -54,7 +54,7 @@ const QualityActionPage: NextPage = () => {
         templateColumns='repeat(12, 1fr)'
       >
         <GridItem rowSpan={7} colSpan={12}>
-          <Text fontSize="4xl" fontWeight="bold" color="white">
+          <Text fontSize="4xl" fontWeight="bold" color="black">
             Quality
           </Text>
 
@@ -69,7 +69,7 @@ const QualityActionPage: NextPage = () => {
           />
         </GridItem>
         <GridItem rowSpan={12} colSpan={3}>
-          <Text fontSize="2xl" fontWeight="bold" color="white" mt={2}>
+          <Text fontSize="2xl" fontWeight="bold" color="black" mt={2}>
             Settings
           </Text>
 

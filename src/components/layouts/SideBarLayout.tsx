@@ -77,7 +77,7 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
         <Navbar>
           {router.pathname.includes('/docs') &&
             <Menu>
-              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.100">
+              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.100" p={0} fontSize="xs">
                 API
               </MenuButton>
               <MenuList p={0}>
@@ -97,7 +97,7 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
           }
           {router.pathname.includes('/demo') &&
             <Menu>
-              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.100">
+              <MenuButton as={Button} bg="none" border="1px solid" borderColor="gray.100" p={0} fontSize="xs">
                 Demo
               </MenuButton>
               <MenuList p={0}>
