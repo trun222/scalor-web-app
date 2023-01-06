@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { List, ListItem, Badge, Link, HStack } from '@chakra-ui/react'
+import { List, ListItem, Badge, Link } from '@chakra-ui/react'
 import NextLink from "next/link"
 import { useRouter } from 'next/router';
 import Image from 'next/image';
