@@ -83,7 +83,7 @@ export default function Navbar({ children }: { children?: any }) {
             variant='outline'
           />
           <MenuList p={0}>
-            <NextLink href='/docs/upload' passHref>
+            <NextLink href='/docs/releases' passHref>
               <MenuItem icon={<MdMenuBook fontSize="26px" />}>
                 Documentation
               </MenuItem>
@@ -168,8 +168,7 @@ export default function Navbar({ children }: { children?: any }) {
               (BETA)
             </Text>
           </NextLink>
-
-          <NextLink href='/docs/upload' passHref>
+          <NextLink href='/docs/releases' passHref>
             <Button bg="none">
               Documentation
             </Button>

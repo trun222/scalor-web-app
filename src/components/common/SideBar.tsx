@@ -1,8 +1,9 @@
 
 import React from 'react';
-import { List, ListItem, Badge, Link } from '@chakra-ui/react'
+import { List, ListItem, Badge, Link, HStack } from '@chakra-ui/react'
 import NextLink from "next/link"
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 interface Props {
   menuItems: any
@@ -18,8 +19,17 @@ export default function SideBar({ menuItems }: Props) {
         <ListItem key={item.action}>
           <NextLink href={item.link} passHref>
             <Link fontWeight={activeRoute === item.link ? 'bold' : 'normal'}>
-              <Badge colorScheme={item.type === 'POST' ? 'purple' : 'orange'} mr={4}>{item.type}</Badge>
-              {item.action}
+              {item.type ?
+                <Badge colorScheme={item.type === 'POST' ? 'purple' : 'orange'}>{item.type}</Badge>
+                : <Image
+                  src="/images/scalor-logo.svg"
+                  height="20px"
+                  width="20px"
+                  alt="Scalor Logo"
+                />
+              }
+
+              <span style={{ marginLeft: '10px' }}>{item.action}</span>
             </Link>
           </NextLink>
         </ListItem>

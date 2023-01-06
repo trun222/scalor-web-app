@@ -13,6 +13,12 @@ const docMenuItems = [
   //   link: '/docs/user'
   // },
   {
+    action: 'Releases',
+    type: '',
+    link: '/docs/releases',
+    demo: '',
+  },
+  {
     action: 'Upload',
     type: 'POST',
     link: '/docs/upload'
