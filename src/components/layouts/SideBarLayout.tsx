@@ -66,7 +66,7 @@ export default function SideBarLayout({ menuItems, children }: { menuItems?: any
 
   return (
     <Grid
-      h='100vh'
+      h='100%'
       templateRows='repeat(12, 1fr)'
       templateColumns='repeat(12, 1fr)'
     >
