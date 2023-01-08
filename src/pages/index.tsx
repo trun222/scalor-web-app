@@ -39,7 +39,7 @@ const HomePage: NextPage = () => {
           <LandingSection />
         </GridItem>
 
-        <GridItem rowSpan={11} colSpan={12} bg='gray.100' p={8}>
+        <GridItem rowSpan={11} colSpan={12} bg='gray.400' p={8}>
           <Center mb={4}>
             <Text className="fontBold"
               fontSize="3xl">Bring your own Storage!</Text>
@@ -115,7 +115,7 @@ const HomePage: NextPage = () => {
           </HStack>
         </GridItem>
 
-        <GridItem rowSpan={11} colSpan={12} bg='gray.100' p={8}>
+        <GridItem rowSpan={11} colSpan={12} bg='gray.400' p={8}>
           <Center mb={4}>
             <Text className="fontBold"
               fontSize="3xl">Easily Resize</Text>
@@ -195,7 +195,7 @@ const HomePage: NextPage = () => {
             </Box>
           </HStack>
         </GridItem>
-        <GridItem rowSpan={1} colSpan={12} bg='gray.50' p={4}>
+        <GridItem rowSpan={1} colSpan={12} bg='gray.400' p={4}>
           <Footer />
         </GridItem>
       </Grid>
