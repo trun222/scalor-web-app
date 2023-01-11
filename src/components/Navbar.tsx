@@ -136,7 +136,7 @@ export default function Navbar({ children }: { children?: any }) {
 
   const DesktopNav = () => {
     return (
-      <HStack align="center" alignItems="center" justify="space-between" h="100%" p={2}>
+      <HStack align="center" alignItems="center" justify="space-between" p={2}>
         <HStack spacing={4} align="center">
           <NextLink href='/' passHref>
             <Image

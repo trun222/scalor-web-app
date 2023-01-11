@@ -3,13 +3,13 @@ import type { NextPage } from 'next'
 import { Text } from '@chakra-ui/react'
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
-import SideBarLayout from '@/src/components/layouts/SideBarLayout';
+import DocsLayout from '@/src/components/layouts/DocsLayout';
 import Description from '@/src/components/docs/Description';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
 
 const UploadDocs: NextPage = () => {
   return (
-    <SideBarLayout>
+    <DocsLayout>
       <ActionTitle
         action="Upload"
         method="POST"
@@ -44,7 +44,7 @@ const UploadDocs: NextPage = () => {
           "uploadId": "9e51c122-a691-4bdf-84a7-d480xda2cf60"
         }}
       />
-    </SideBarLayout >
+    </DocsLayout >
   )
 }
 

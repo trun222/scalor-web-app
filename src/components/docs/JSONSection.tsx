@@ -16,6 +16,7 @@ export default function JSONSection({ title, json, w }: { title: string, json: a
           base: '100%',
           md: w || 'auto'
         }}
+        h="100%"
         maxW="700px"
       >
         <PrettyJSON

@@ -6,12 +6,12 @@ import Description from '@/src/components/docs/Description';
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
-import SideBarLayout from '@/src/components/layouts/SideBarLayout';
+import DocsLayout from '@/src/components/layouts/DocsLayout';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
 
 const AverageDocs: NextPage = () => {
   return (
-    <SideBarLayout>
+    <DocsLayout>
       <ActionTitle
         action="Average"
         method="POST"
@@ -69,7 +69,7 @@ const AverageDocs: NextPage = () => {
           }
         }}
       />
-    </SideBarLayout>
+    </DocsLayout>
   )
 }
 

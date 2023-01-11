@@ -2,15 +2,15 @@
 import React from 'react';
 import type { NextPage } from 'next'
 import { VStack, Text } from '@chakra-ui/react';
-import SideBarLayout from '@/src/components/layouts/SideBarLayout';
+import DocsLayout from '@/src/components/layouts/DocsLayout';
 import ReactPlayer from 'react-player';
 
 const Releases: NextPage = () => {
   return (
-    <SideBarLayout>
+    <DocsLayout>
       <VStack align="start" spacing={8} px={2}>
         <Text fontSize="4xl">
-          Version 0.0.1
+          Release #1
         </Text>
 
         <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
@@ -19,10 +19,10 @@ const Releases: NextPage = () => {
           New 🙌
         </Text>
 
-        <ul style={{ paddingLeft: '5em' }}>
+        <ul style={{ paddingLeft: '5em', width: '80%' }}>
           <li>
             Cloud Connectors -- You can now add different Cloud connectors in order to save your API results to your favorite Cloud Provider! This will make it easier than ever to use Scalor.
-            <i> In the future we will be providing even more way to manage your digital assets.</i>
+            <i> In the future we will be providing even more ways to manage your digital assets.</i>
           </li>
         </ul>
 
@@ -30,7 +30,7 @@ const Releases: NextPage = () => {
           Improvements 🧰
         </Text>
 
-        <ul style={{ paddingLeft: '5em' }}>
+        <ul style={{ paddingLeft: '5em', width: '80%' }}>
           <li>
             Fixed styling issues on the landing page where section colors were not distinguishable
           </li>
@@ -39,7 +39,7 @@ const Releases: NextPage = () => {
           </li>
         </ul>
       </VStack>
-    </SideBarLayout >
+    </DocsLayout >
   )
 }
 

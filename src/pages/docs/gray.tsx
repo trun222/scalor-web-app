@@ -5,13 +5,13 @@ import { Text } from '@chakra-ui/react'
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
-import SideBarLayout from '@/src/components/layouts/SideBarLayout';
+import DocsLayout from '@/src/components/layouts/DocsLayout';
 import Description from '@/src/components/docs/Description';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
 
 const GrayDocs: NextPage = () => {
   return (
-    <SideBarLayout>
+    <DocsLayout>
       <ActionTitle
         action="Gray"
         method="POST"
@@ -65,7 +65,7 @@ const GrayDocs: NextPage = () => {
           }
         }}
       />
-    </SideBarLayout >
+    </DocsLayout >
   )
 }
 
