@@ -61,16 +61,6 @@ export default function Navbar({ children }: { children?: any }) {
               Scalor
             </Text>
           </NextLink>
-          <NextLink href='/' passHref>
-            <Text
-              fontSize="2xl"
-              color='white'
-              fontWeight="bold"
-              cursor="pointer"
-            >
-              (BETA)
-            </Text>
-          </NextLink>
         </HStack>
 
         {children}

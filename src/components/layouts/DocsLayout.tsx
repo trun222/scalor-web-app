@@ -341,7 +341,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
           justify="center"
           spacing={6}
           p={{
-            base: 1,
+            base: 8,
             md: 2,
             lg: 6
           }}
