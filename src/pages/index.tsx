@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, GridItem, HStack, Text, Box, Center, Icon } from '@chakra-ui/react'
+import { Grid, GridItem, HStack, Stack, Text, Box, Center, Icon } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import Navbar from '@/src/components/Navbar';
 import LandingSection from '@/src/components/LandingSection';
@@ -49,10 +49,10 @@ const HomePage: NextPage = () => {
             <Text fontSize="2xl">Easily store your data directly to your cloud infrastructure.</Text>
           </Center>
 
-          <HStack justify="center" spacing={20}>
+          <Stack align="center" justify="center" direction={{ base: 'column', md: 'row' }} spacing={{ base: 0, md: 20 }}>
             <Box
               h={{
-                base: "300px",
+                base: "150px",
                 md: 'auto'
               }}>
               <Icon h="128px" w="128px" as={FaAws} />
@@ -60,7 +60,7 @@ const HomePage: NextPage = () => {
 
             <Box
               h={{
-                base: "300px",
+                base: "150px",
                 md: 'auto'
               }}>
               <Icon h="128px" w="128px" as={VscAzure} />
@@ -68,12 +68,12 @@ const HomePage: NextPage = () => {
 
             <Box
               h={{
-                base: "300px",
+                base: "150px",
                 md: 'auto'
               }}>
               <Icon h="128px" w="128px" as={MdOutlineWbCloudy} />
             </Box>
-          </HStack>
+          </Stack>
         </GridItem>
         <GridItem rowSpan={11} colSpan={12} bg='white' p={8}>
           <Center mb={4}>
