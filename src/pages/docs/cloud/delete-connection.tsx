@@ -31,6 +31,7 @@ const DeleteConnection: NextPage = () => {
       <JSONSection
         title="Headers"
         json={{ token: '${API_TOKEN}' }}
+        h="100px"
         w="70%"
       />
 
@@ -39,6 +40,7 @@ const DeleteConnection: NextPage = () => {
         json={{
           "id": "9",
         }}
+        h="100px"
         w="70%"
       />
     </DocsLayout>

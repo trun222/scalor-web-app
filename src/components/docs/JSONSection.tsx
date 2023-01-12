@@ -1,13 +1,13 @@
-import { Text, Box } from '@chakra-ui/react'
-import PrettyJSON from 'react-prettify-json';
+import { Text, Textarea } from '@chakra-ui/react'
+import type { _ } from 'ts-pattern/dist/patterns';
 
-export default function JSONSection({ title, json, w }: { title: string, json: any, w?: string }) {
+export default function JSONSection({ title, json, h, w }: { title: string, json: any, h?: string, w?: string }) {
   return (
     <>
       <Text fontSize="2xl">
         {title}
       </Text>
-      <Box bg="white"
+      <Textarea bg="white"
         p={{
           base: 1,
           md: 4
@@ -16,19 +16,11 @@ export default function JSONSection({ title, json, w }: { title: string, json: a
           base: '100%',
           md: w || 'auto'
         }}
-        h="100%"
+        h={h || "250px"}
         maxW="700px"
       >
-        <PrettyJSON
-          jsonObject={json}
-          colors={{
-            punctuation: '#000',
-            key: '#000',
-            value: 'purple',
-            string: 'purple',
-          }}
-        />
-      </Box>
+        {JSON.stringify(json, null, 4)}
+      </Textarea>
     </>
   );
 }

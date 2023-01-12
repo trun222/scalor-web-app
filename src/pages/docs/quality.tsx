@@ -35,6 +35,8 @@ const QualityDocs: NextPage = () => {
       <JSONSection
         title="Headers"
         json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
+        h="125px"
+        w="70%"
       />
 
       <JSONSection
@@ -45,6 +47,8 @@ const QualityDocs: NextPage = () => {
           "platform": "WEB",
           "mimeType": "image/jpg"
         }}
+        h="175px"
+        w="70%"
       />
 
       <PropertiesSection
@@ -58,6 +62,8 @@ const QualityDocs: NextPage = () => {
         json={{
           "file": "data:image/jpg;base64, ${BASE64}"
         }}
+        h="100px"
+        w="70%"
       />
 
       <JSONSection
@@ -68,6 +74,8 @@ const QualityDocs: NextPage = () => {
             "data": "${BINARY_DATA}"
           }
         }}
+        h="175px"
+        w="70%"
       />
     </DocsLayout >
   )

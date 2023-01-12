@@ -31,11 +31,15 @@ const UploadDocs: NextPage = () => {
       <JSONSection
         title="Headers"
         json={{ 'Content-Type': 'multipart-form-data', token: '${API_TOKEN}' }}
+        h="125px"
+        w="70%"
       />
 
       <JSONSection
         title="Body"
         json={{ file: '${multipart-form-data}' }}
+        h="100px"
+        w="70%"
       />
 
       <JSONSection
@@ -43,6 +47,8 @@ const UploadDocs: NextPage = () => {
         json={{
           "uploadId": "9e51c122-a691-4bdf-84a7-d480xda2cf60"
         }}
+        h="100px"
+        w="70%"
       />
     </DocsLayout >
   )

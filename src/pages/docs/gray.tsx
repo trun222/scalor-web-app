@@ -32,6 +32,8 @@ const GrayDocs: NextPage = () => {
       <JSONSection
         title="Headers"
         json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
+        h="125px"
+        w="70%"
       />
 
       <JSONSection
@@ -41,6 +43,8 @@ const GrayDocs: NextPage = () => {
           "platform": "WEB",
           "mimeType": "image/jpg"
         }}
+        h="150px"
+        w="70%"
       />
 
       <PropertiesSection
@@ -54,6 +58,8 @@ const GrayDocs: NextPage = () => {
         json={{
           "file": "data:image/jpg;base64, ${BASE64}"
         }}
+        h="100px"
+        w="70%"
       />
 
       <JSONSection
@@ -64,6 +70,8 @@ const GrayDocs: NextPage = () => {
             "data": "${BINARY_DATA}"
           }
         }}
+        h="175px"
+        w="70%"
       />
     </DocsLayout >
   )

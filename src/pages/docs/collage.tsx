@@ -30,12 +30,11 @@ const CollageDocs: NextPage = () => {
         will be the second image. If the image dimensions are radically different there will be white space to preserve the ratio of the largest image.
       </Description>
 
-
-
-
       <JSONSection
         title="Headers"
         json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
+        h="125px"
+        w="70%"
       />
 
       <JSONSection
@@ -46,6 +45,8 @@ const CollageDocs: NextPage = () => {
           "platform": "WEB",
           "mimeType": "image/jpg"
         }}
+        h="175px"
+        w="70%"
       />
 
       <PropertiesSection
@@ -59,6 +60,8 @@ const CollageDocs: NextPage = () => {
         json={{
           "file": "data:image/jpg;base64, ${BASE64}"
         }}
+        h="100px"
+        w="70%"
       />
 
       <JSONSection
@@ -69,6 +72,8 @@ const CollageDocs: NextPage = () => {
             "data": "${BINARY_DATA}"
           }
         }}
+        h="175px"
+        w="70%"
       />
     </DocsLayout >
   )

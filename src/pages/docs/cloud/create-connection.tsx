@@ -40,6 +40,7 @@ const CreateConnection: NextPage = () => {
       <JSONSection
         title="Headers"
         json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
+        h="125px"
         w="70%"
       />
 
@@ -52,6 +53,7 @@ const CreateConnection: NextPage = () => {
           "accessKey": "access key",
           "secretKey": "secret key"
         }}
+        h="200px"
         w="70%"
       />
 
@@ -62,6 +64,7 @@ const CreateConnection: NextPage = () => {
           "accountName": "scalortest",
           "accountAccessKey": "${base64 string}"
         }}
+        h="150px"
         w="70%"
       />
 
@@ -73,6 +76,7 @@ const CreateConnection: NextPage = () => {
           "clientEmail": "scalor-test@scalor.iam.gserviceaccount.com",
           "privateKey": "-----BEGIN PRIVATE KEY----------END PRIVATE KEY-----\n"
         }}
+        h="185px"
         w="70%"
       />
     </DocsLayout>
