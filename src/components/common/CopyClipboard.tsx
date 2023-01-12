@@ -10,7 +10,6 @@ const CopyClipboard = ({ text }: { text: any }) => {
   const handleCopyToClipboard = () => {
     navigator.clipboard.writeText(text);
     toast({
-      title: 'Copied',
       description: "Sucessfully copied to clipboard.",
       status: 'success',
       duration: 5000,
@@ -20,7 +19,7 @@ const CopyClipboard = ({ text }: { text: any }) => {
 
   return (
     <Description>
-      <HStack justify="space-between">
+      <HStack justify="space-between" overflowX="scroll" overflowY="hidden">
         <Text fontSize="md">
           {text}
         </Text>

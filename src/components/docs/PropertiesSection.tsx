@@ -9,9 +9,12 @@ export default function PropertiesSection({ properties }: { properties: any }) {
 
       <Box w={{
         base: '100%',
-        sm: '',
         md: '70%'
-      }} maxW="700px" bg="white">
+      }}
+        maxW="700px"
+        bg="white"
+        overflowX="scroll"
+      >
         <List spacing={3} p={4} w="100%">
           {properties.map((h: any) => <ListItem key={h.key}>
             {h.key} <Badge colorScheme={'red'} ml={4}>{h.value}</Badge> {h.note ? <Badge colorScheme={'purple'} ml={4}>{h.note}</Badge> : ''}

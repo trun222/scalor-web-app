@@ -19,7 +19,7 @@ export default function ActionTitle({ action, method }: { action: string, method
       <Badge colorScheme={selectColor(method)}>
         <Text fontSize="2xl">{method}</Text>
       </Badge>
-      <Text fontSize="3xl">{action}</Text>
+      <Text fontSize={{ base: "xl", md: "3xl" }}>{action}</Text>
     </HStack>
   );
 }
