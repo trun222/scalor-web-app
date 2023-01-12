@@ -26,6 +26,12 @@ const GetConnection: NextPage = () => {
 
       <Description>
         Fetches a particular Cloud Connection based on the connectionId assuming that the connectionId is for the user requesting the Cloud Connection.
+
+        <br />
+        <br />
+        <i>
+          Note: All sensitive data such as access keys and secret keys are encrypted during transit and at rest.
+        </i>
       </Description>
 
       <JSONSection

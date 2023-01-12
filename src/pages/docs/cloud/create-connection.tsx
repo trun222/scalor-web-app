@@ -26,6 +26,15 @@ const CreateConnection: NextPage = () => {
 
       <Description>
         Easily create a Cloud Connection with AWS, GCP and Azure.
+
+        <br />
+        <br />
+        It is recommended that you create a new Cloud Connector for each Bucket or Folder, even if you are using them on the same Cloud.
+
+        <br />
+        <br />
+        <i>Note: All sensitive data such as access keys and secret keys are encrypted during transit and at rest.
+          For your protection and best practice, limit permissions to a single bucket or folder per connection.</i>
       </Description>
 
       <JSONSection

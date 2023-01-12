@@ -17,7 +17,7 @@ export default function ActionTitle({ action, method }: { action: string, method
   return (
     <HStack justify="space-between" spacing={6}>
       <Badge colorScheme={selectColor(method)}>
-        <Text fontSize="3xl">{method}</Text>
+        <Text fontSize="2xl">{method}</Text>
       </Badge>
       <Text fontSize="3xl">{action}</Text>
     </HStack>

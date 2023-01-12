@@ -46,7 +46,7 @@ const HomePage: NextPage = () => {
           </Center>
 
           <Center mb={8} textAlign="center">
-            <Text fontSize="2xl">Easily store directly to your cloud infrastructure.</Text>
+            <Text fontSize="2xl">Easily store your data directly to your cloud infrastructure.</Text>
           </Center>
 
           <HStack justify="center" spacing={20}>
