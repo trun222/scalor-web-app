@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Grid, GridItem, VStack, Menu, MenuItem, MenuList, MenuButton, Button, Badge, List, ListItem, Link, Text, Divider } from '@chakra-ui/react';
+import { Grid, GridItem, VStack, Menu, MenuItem, MenuList, MenuButton, Button, Badge, List, ListItem, Link, Text } from '@chakra-ui/react';
 import Navbar from '@/src/components/Navbar';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router'
