@@ -83,7 +83,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
 
                 <MenuItem>
                   <NextLink href="/docs/cloud/get-connection" passHref>
-                    <Link fontWeight={activeRoute === "/docs/cloud/get-connection" ? 'bold' : 'normal'}>
+                    <Link color={activeRoute === "/docs/cloud/get-connection" ? 'pink.500' : 'black'}>
                       <Badge colorScheme="orange">GET</Badge>
                       <span style={{ marginLeft: '10px' }}>Get Connection</span>
                     </Link>
@@ -92,7 +92,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
 
                 <MenuItem>
                   <NextLink href="/docs/cloud/create-connection" passHref>
-                    <Link fontWeight={activeRoute === "/docs/cloud/create-connection" ? 'bold' : 'normal'}>
+                    <Link color={activeRoute === "/docs/cloud/create-connection" ? 'pink.500' : 'black'}>
                       <Badge colorScheme="purple">POST</Badge>
                       <span style={{ marginLeft: '10px' }}>Create Connection</span>
                     </Link>
@@ -101,7 +101,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
 
                 <MenuItem>
                   <NextLink href="/docs/cloud/delete-connection" passHref>
-                    <Link fontWeight={activeRoute === "/docs/cloud/delete-connection" ? 'bold' : 'normal'}>
+                    <Link color={activeRoute === "/docs/cloud/delete-connection" ? 'pink.500' : 'black'}>
                       <Badge colorScheme="red">DELETE</Badge>
                       <span style={{ marginLeft: '10px' }}>Delete Connection</span>
                     </Link>
@@ -115,7 +115,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
 
                 <MenuItem>
                   <NextLink href="/docs/upload" passHref>
-                    <Link fontWeight={activeRoute === "/docs/upload" ? 'bold' : 'normal'}>
+                    <Link color={activeRoute === "/docs/upload" ? 'pink.500' : 'black'}>
                       <Badge colorScheme="purple">POST</Badge>
                       <span style={{ marginLeft: '10px' }}>Upload</span>
                     </Link>
@@ -123,7 +123,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                 </MenuItem>
                 <MenuItem>
                   <NextLink href="/docs/resize" passHref>
-                    <Link fontWeight={activeRoute === "/docs/resize" ? 'bold' : 'normal'}>
+                    <Link color={activeRoute === "/docs/resize" ? 'pink.500' : 'black'}>
                       <Badge colorScheme="purple">POST</Badge>
                       <span style={{ marginLeft: '10px' }}>Resize</span>
                     </Link>
@@ -131,7 +131,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                 </MenuItem>
                 <MenuItem>
                   <NextLink href="/docs/quality" passHref>
-                    <Link fontWeight={activeRoute === "/docs/quality" ? 'bold' : 'normal'}>
+                    <Link color={activeRoute === "/docs/quality" ? 'pink.500' : 'black'}>
                       <Badge colorScheme="purple">POST</Badge>
                       <span style={{ marginLeft: '10px' }}>Quality</span>
                     </Link>
@@ -139,7 +139,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                 </MenuItem>
                 <MenuItem>
                   <NextLink href="/docs/moonlight" passHref>
-                    <Link fontWeight={activeRoute === "/docs/moonlight" ? 'bold' : 'normal'}>
+                    <Link color={activeRoute === "/docs/moonlight" ? 'pink.500' : 'black'}>
                       <Badge colorScheme="purple">POST</Badge>
                       <span style={{ marginLeft: '10px' }}>Moonlight</span>
                     </Link>
@@ -147,7 +147,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                 </MenuItem>
                 <MenuItem>
                   <NextLink href="/docs/sharpen" passHref>
-                    <Link fontWeight={activeRoute === "/docs/sharpen" ? 'bold' : 'normal'}>
+                    <Link color={activeRoute === "/docs/sharpen" ? 'pink.500' : 'black'}>
                       <Badge colorScheme="purple">POST</Badge>
                       <span style={{ marginLeft: '10px' }}>Sharpen</span>
                     </Link>
@@ -155,7 +155,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                 </MenuItem>
                 <MenuItem>
                   <NextLink href="/docs/average" passHref>
-                    <Link fontWeight={activeRoute === "/docs/average" ? 'bold' : 'normal'}>
+                    <Link color={activeRoute === "/docs/average" ? 'pink.500' : 'black'}>
                       <Badge colorScheme="purple">POST</Badge>
                       <span style={{ marginLeft: '10px' }}>Color Balance</span>
                     </Link>
@@ -163,7 +163,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                 </MenuItem>
                 <MenuItem>
                   <NextLink href="/docs/gray" passHref>
-                    <Link fontWeight={activeRoute === "/docs/gray" ? 'bold' : 'normal'}>
+                    <Link color={activeRoute === "/docs/gray" ? 'pink.500' : 'black'}>
                       <Badge colorScheme="purple">POST</Badge>
                       <span style={{ marginLeft: '10px' }}>Gray</span>
                     </Link>
@@ -171,7 +171,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                 </MenuItem>
                 <MenuItem>
                   <NextLink href="/docs/collage" passHref>
-                    <Link fontWeight={activeRoute === "/docs/collage" ? 'bold' : 'normal'}>
+                    <Link color={activeRoute === "/docs/collage" ? 'pink.500' : 'black'}>
                       <Badge colorScheme="purple">POST</Badge>
                       <span style={{ marginLeft: '10px' }}>Collage</span>
                     </Link>
@@ -231,7 +231,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
 
           <ListItem>
             <NextLink href="/docs/cloud/get-connection" passHref>
-              <Link fontWeight={activeRoute === "/docs/cloud/get-connection" ? 'bold' : 'normal'}>
+              <Link color={activeRoute === "/docs/cloud/get-connection" ? 'pink.500' : 'black'}>
                 <Badge colorScheme="orange">GET</Badge>
                 <span style={{ marginLeft: '10px' }}>Get Connection</span>
               </Link>
@@ -240,7 +240,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
 
           <ListItem>
             <NextLink href="/docs/cloud/create-connection" passHref>
-              <Link fontWeight={activeRoute === "/docs/cloud/create-connection" ? 'bold' : 'normal'}>
+              <Link color={activeRoute === "/docs/cloud/create-connection" ? 'pink.500' : 'black'}>
                 <Badge colorScheme="purple">POST</Badge>
                 <span style={{ marginLeft: '10px' }}>Create Connection</span>
               </Link>
@@ -249,7 +249,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
 
           <ListItem>
             <NextLink href="/docs/cloud/delete-connection" passHref>
-              <Link fontWeight={activeRoute === "/docs/cloud/delete-connection" ? 'bold' : 'normal'}>
+              <Link color={activeRoute === "/docs/cloud/delete-connection" ? 'pink.500' : 'black'}>
                 <Badge colorScheme="red">DELETE</Badge>
                 <span style={{ marginLeft: '10px' }}>Delete Connection</span>
               </Link>
@@ -263,7 +263,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
 
           <ListItem>
             <NextLink href="/docs/upload" passHref>
-              <Link fontWeight={activeRoute === "/docs/upload" ? 'bold' : 'normal'}>
+              <Link color={activeRoute === "/docs/upload" ? 'pink.500' : 'black'}>
                 <Badge colorScheme="purple">POST</Badge>
                 <span style={{ marginLeft: '10px' }}>Upload</span>
               </Link>
@@ -271,7 +271,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
           </ListItem>
           <ListItem>
             <NextLink href="/docs/resize" passHref>
-              <Link fontWeight={activeRoute === "/docs/resize" ? 'bold' : 'normal'}>
+              <Link color={activeRoute === "/docs/resize" ? 'pink.500' : 'black'}>
                 <Badge colorScheme="purple">POST</Badge>
                 <span style={{ marginLeft: '10px' }}>Resize</span>
               </Link>
@@ -279,7 +279,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
           </ListItem>
           <ListItem>
             <NextLink href="/docs/quality" passHref>
-              <Link fontWeight={activeRoute === "/docs/quality" ? 'bold' : 'normal'}>
+              <Link color={activeRoute === "/docs/quality" ? 'pink.500' : 'black'}>
                 <Badge colorScheme="purple">POST</Badge>
                 <span style={{ marginLeft: '10px' }}>Quality</span>
               </Link>
@@ -287,7 +287,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
           </ListItem>
           <ListItem>
             <NextLink href="/docs/moonlight" passHref>
-              <Link fontWeight={activeRoute === "/docs/moonlight" ? 'bold' : 'normal'}>
+              <Link color={activeRoute === "/docs/moonlight" ? 'pink.500' : 'black'}>
                 <Badge colorScheme="purple">POST</Badge>
                 <span style={{ marginLeft: '10px' }}>Moonlight</span>
               </Link>
@@ -295,7 +295,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
           </ListItem>
           <ListItem>
             <NextLink href="/docs/sharpen" passHref>
-              <Link fontWeight={activeRoute === "/docs/sharpen" ? 'bold' : 'normal'}>
+              <Link color={activeRoute === "/docs/sharpen" ? 'pink.500' : 'black'}>
                 <Badge colorScheme="purple">POST</Badge>
                 <span style={{ marginLeft: '10px' }}>Sharpen</span>
               </Link>
@@ -303,7 +303,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
           </ListItem>
           <ListItem>
             <NextLink href="/docs/average" passHref>
-              <Link fontWeight={activeRoute === "/docs/average" ? 'bold' : 'normal'}>
+              <Link color={activeRoute === "/docs/average" ? 'pink.500' : 'black'}>
                 <Badge colorScheme="purple">POST</Badge>
                 <span style={{ marginLeft: '10px' }}>Color Balance</span>
               </Link>
@@ -311,7 +311,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
           </ListItem>
           <ListItem>
             <NextLink href="/docs/gray" passHref>
-              <Link fontWeight={activeRoute === "/docs/gray" ? 'bold' : 'normal'}>
+              <Link color={activeRoute === "/docs/gray" ? 'pink.500' : 'black'}>
                 <Badge colorScheme="purple">POST</Badge>
                 <span style={{ marginLeft: '10px' }}>Gray</span>
               </Link>
@@ -319,7 +319,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
           </ListItem>
           <ListItem>
             <NextLink href="/docs/collage" passHref>
-              <Link fontWeight={activeRoute === "/docs/collage" ? 'bold' : 'normal'}>
+              <Link color={activeRoute === "/docs/collage" ? 'pink.500' : 'black'}>
                 <Badge colorScheme="purple">POST</Badge>
                 <span style={{ marginLeft: '10px' }}>Collage</span>
               </Link>
