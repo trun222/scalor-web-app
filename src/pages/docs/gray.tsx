@@ -21,7 +21,7 @@ const GrayDocs: NextPage = () => {
         text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/gray`}
       />
 
-      <Text fontSize="3xl" className="fontBold">
+      <Text fontSize="2xl">
         Description
       </Text>
 

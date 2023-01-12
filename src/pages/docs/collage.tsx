@@ -21,7 +21,7 @@ const CollageDocs: NextPage = () => {
         text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/collage`}
       />
 
-      <Text fontSize="3xl" className="fontBold">
+      <Text fontSize="2xl">
         Description
       </Text>
 

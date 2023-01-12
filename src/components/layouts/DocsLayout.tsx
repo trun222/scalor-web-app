@@ -81,8 +81,6 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                   <Text>Cloud Connectors</Text>
                 </MenuItem>
 
-                <Divider orientation='horizontal' borderColor="gray.400" />
-
                 <MenuItem>
                   <NextLink href="/docs/cloud/get-connection" passHref>
                     <Link fontWeight={activeRoute === "/docs/cloud/get-connection" ? 'bold' : 'normal'}>
@@ -114,8 +112,6 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                 <MenuItem>
                   <Text>Image API</Text>
                 </MenuItem>
-
-                <Divider orientation='horizontal' borderColor="gray.400" />
 
                 <MenuItem>
                   <NextLink href="/docs/upload" passHref>
@@ -233,8 +229,6 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
             <Text>Cloud Connectors</Text>
           </ListItem>
 
-          <Divider orientation='horizontal' borderColor="gray.400" />
-
           <ListItem>
             <NextLink href="/docs/cloud/get-connection" passHref>
               <Link fontWeight={activeRoute === "/docs/cloud/get-connection" ? 'bold' : 'normal'}>
@@ -266,8 +260,6 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
           <ListItem>
             <Text>Image API</Text>
           </ListItem>
-
-          <Divider orientation='horizontal' borderColor="gray.400" />
 
           <ListItem>
             <NextLink href="/docs/upload" passHref>

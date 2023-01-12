@@ -21,7 +21,7 @@ const CopyClipboard = ({ text }: { text: any }) => {
   return (
     <Description>
       <HStack justify="space-between">
-        <Text fontSize="xl">
+        <Text fontSize="md">
           {text}
         </Text>
         <IconButton

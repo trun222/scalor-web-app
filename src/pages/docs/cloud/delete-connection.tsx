@@ -20,7 +20,7 @@ const DeleteConnection: NextPage = () => {
         text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/cloudConnection/\${connectionId}`}
       />
 
-      <Text fontSize="3xl" className="fontBold">
+      <Text fontSize="2xl">
         Description
       </Text>
 

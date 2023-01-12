@@ -19,7 +19,7 @@ const UploadDocs: NextPage = () => {
         text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/upload`}
       />
 
-      <Text fontSize="3xl" className="fontBold">
+      <Text fontSize="2xl">
         Description
       </Text>
 
