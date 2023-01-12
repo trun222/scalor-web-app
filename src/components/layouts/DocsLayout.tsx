@@ -76,17 +76,111 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                 API
               </MenuButton>
               <MenuList p={0}>
-                {docMenuItems.map((menuItem: any) => {
-                  return (
-                    <NextLink key={menuItem.action} href={menuItem.link} passHref>
-                      <MenuItem>
-                        <Badge colorScheme="purple" mr={4}>{menuItem.type}</Badge>
-                        {menuItem.action}
-                      </MenuItem>
-                    </NextLink>
-                  )
-                })
-                }
+
+                <MenuItem>
+                  <Text>Cloud Connectors</Text>
+                </MenuItem>
+
+                <Divider orientation='horizontal' borderColor="gray.400" />
+
+                <MenuItem>
+                  <NextLink href="/docs/cloud/get-connection" passHref>
+                    <Link fontWeight={activeRoute === "/docs/cloud/get-connection" ? 'bold' : 'normal'}>
+                      <Badge colorScheme="orange">GET</Badge>
+                      <span style={{ marginLeft: '10px' }}>Get Connection</span>
+                    </Link>
+                  </NextLink>
+                </MenuItem>
+
+                <MenuItem>
+                  <NextLink href="/docs/cloud/create-connection" passHref>
+                    <Link fontWeight={activeRoute === "/docs/cloud/create-connection" ? 'bold' : 'normal'}>
+                      <Badge colorScheme="purple">POST</Badge>
+                      <span style={{ marginLeft: '10px' }}>Create Connection</span>
+                    </Link>
+                  </NextLink>
+                </MenuItem>
+
+                <MenuItem>
+                  <NextLink href="/docs/cloud/delete-connection" passHref>
+                    <Link fontWeight={activeRoute === "/docs/cloud/delete-connection" ? 'bold' : 'normal'}>
+                      <Badge colorScheme="red">DELETE</Badge>
+                      <span style={{ marginLeft: '10px' }}>Delete Connection</span>
+                    </Link>
+                  </NextLink>
+                </MenuItem>
+
+
+                <MenuItem>
+                  <Text>Image API</Text>
+                </MenuItem>
+
+                <Divider orientation='horizontal' borderColor="gray.400" />
+
+                <MenuItem>
+                  <NextLink href="/docs/upload" passHref>
+                    <Link fontWeight={activeRoute === "/docs/upload" ? 'bold' : 'normal'}>
+                      <Badge colorScheme="purple">POST</Badge>
+                      <span style={{ marginLeft: '10px' }}>Upload</span>
+                    </Link>
+                  </NextLink>
+                </MenuItem>
+                <MenuItem>
+                  <NextLink href="/docs/resize" passHref>
+                    <Link fontWeight={activeRoute === "/docs/resize" ? 'bold' : 'normal'}>
+                      <Badge colorScheme="purple">POST</Badge>
+                      <span style={{ marginLeft: '10px' }}>Resize</span>
+                    </Link>
+                  </NextLink>
+                </MenuItem>
+                <MenuItem>
+                  <NextLink href="/docs/quality" passHref>
+                    <Link fontWeight={activeRoute === "/docs/quality" ? 'bold' : 'normal'}>
+                      <Badge colorScheme="purple">POST</Badge>
+                      <span style={{ marginLeft: '10px' }}>Quality</span>
+                    </Link>
+                  </NextLink>
+                </MenuItem>
+                <MenuItem>
+                  <NextLink href="/docs/moonlight" passHref>
+                    <Link fontWeight={activeRoute === "/docs/moonlight" ? 'bold' : 'normal'}>
+                      <Badge colorScheme="purple">POST</Badge>
+                      <span style={{ marginLeft: '10px' }}>Moonlight</span>
+                    </Link>
+                  </NextLink>
+                </MenuItem>
+                <MenuItem>
+                  <NextLink href="/docs/sharpen" passHref>
+                    <Link fontWeight={activeRoute === "/docs/sharpen" ? 'bold' : 'normal'}>
+                      <Badge colorScheme="purple">POST</Badge>
+                      <span style={{ marginLeft: '10px' }}>Sharpen</span>
+                    </Link>
+                  </NextLink>
+                </MenuItem>
+                <MenuItem>
+                  <NextLink href="/docs/average" passHref>
+                    <Link fontWeight={activeRoute === "/docs/average" ? 'bold' : 'normal'}>
+                      <Badge colorScheme="purple">POST</Badge>
+                      <span style={{ marginLeft: '10px' }}>Color Balance</span>
+                    </Link>
+                  </NextLink>
+                </MenuItem>
+                <MenuItem>
+                  <NextLink href="/docs/gray" passHref>
+                    <Link fontWeight={activeRoute === "/docs/gray" ? 'bold' : 'normal'}>
+                      <Badge colorScheme="purple">POST</Badge>
+                      <span style={{ marginLeft: '10px' }}>Gray</span>
+                    </Link>
+                  </NextLink>
+                </MenuItem>
+                <MenuItem>
+                  <NextLink href="/docs/collage" passHref>
+                    <Link fontWeight={activeRoute === "/docs/collage" ? 'bold' : 'normal'}>
+                      <Badge colorScheme="purple">POST</Badge>
+                      <span style={{ marginLeft: '10px' }}>Collage</span>
+                    </Link>
+                  </NextLink>
+                </MenuItem>
               </MenuList>
             </Menu>
           }
@@ -170,7 +264,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
 
 
           <ListItem>
-            <Text>API</Text>
+            <Text>Image API</Text>
           </ListItem>
 
           <Divider orientation='horizontal' borderColor="gray.400" />
