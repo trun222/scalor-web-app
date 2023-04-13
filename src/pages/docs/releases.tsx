@@ -3,7 +3,7 @@ import React from 'react';
 import type { NextPage } from 'next'
 import { Text, Box } from '@chakra-ui/react';
 import DocsLayout from '@/src/components/layouts/DocsLayout';
-import ReactPlayer from 'react-player';
+// import ReactPlayer from 'react-player';
 
 const Releases: NextPage = () => {
   return (
@@ -12,9 +12,10 @@ const Releases: NextPage = () => {
         Release #1
       </Text>
 
+      {/* 
       <Box h="350px" w={{ base: '100%', md: '75%', lg: '600px' }}>
         <ReactPlayer height="100%" width="100%" url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
-      </Box>
+      </Box> */}
 
       <Text fontSize="2xl">
         New 🙌
