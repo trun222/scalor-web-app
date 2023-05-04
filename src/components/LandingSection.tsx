@@ -19,7 +19,6 @@ const LandingSection = () => {
           w="100%"
           spacing={4}
           bg='rgba(0,0,0,.6)'
-          borderRadius="md"
         >
           <Text
             textAlign="center"
