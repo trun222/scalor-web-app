@@ -17,6 +17,7 @@ interface Props {
   isLoaded: boolean;
   setUploadId: (data: string) => void;
   setUploadedImage: (data: string) => void;
+  setMetadata: (data: any) => void;
   setConvertedImage: (data: string) => void;
 }
 
@@ -27,6 +28,7 @@ const DemoUploader = ({
   setUploadId,
   setUploadedImage,
   setConvertedImage,
+  setMetadata,
   isLoaded
 }: Props) => {
   const toast = useToast();
@@ -39,6 +41,7 @@ const DemoUploader = ({
         token: process?.env?.NEXT_PUBLIC_USER_API_TOKEN,
       })
       setUploadId(data.uploadId);
+      setMetadata(data.metadata);
       toast({
         title: 'API RESPONSE.',
         description: "Image upload successful.",

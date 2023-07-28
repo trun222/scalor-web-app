@@ -21,7 +21,7 @@ const QualitySchema = yup.object({
   quality: yup.number().positive().integer().min(0).max(100).required(),
 }).required();
 
-export default function QualityAction({ uploadId, onIsLoaded, onConvertedImage }: any) {
+export default function QualityAction({ uploadId, metadata, onIsLoaded, onConvertedImage }: any) {
   const [quality, setQuality] = React.useState(50);
   const toast = useToast();
 
@@ -75,7 +75,7 @@ export default function QualityAction({ uploadId, onIsLoaded, onConvertedImage }
                   id: uploadId,
                   quality,
                   platform: 'WEB',
-                  mimeType: "image/jpg"
+                  mimeType: metadata?.mimeType,
                 },
                 token: process?.env?.NEXT_PUBLIC_USER_API_TOKEN,
               },

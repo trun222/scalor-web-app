@@ -24,10 +24,11 @@ const ResizeSchema = yup.object({
   width: yup.number().positive().integer().required(),
 }).required();
 
-export default function ResizeAction({ uploadId, convertedImage, onIsLoaded, onConvertedImage }: any) {
+export default function ResizeAction({ uploadId, metadata, convertedImage, onIsLoaded, onConvertedImage }: any) {
   const [height, setHeight] = React.useState(200);
   const [width, setWidth] = React.useState(200);
   const toast = useToast();
+
 
   const { register, handleSubmit, trigger, control, formState: { errors } } = useForm<IResizeFormInputs>({
     resolver: yupResolver(ResizeSchema)
@@ -103,7 +104,7 @@ export default function ResizeAction({ uploadId, convertedImage, onIsLoaded, onC
                   height,
                   width,
                   platform: 'WEB',
-                  mimeType: "image/jpg"
+                  mimeType: metadata?.mimeType,
                 },
                 token: process?.env?.NEXT_PUBLIC_USER_API_TOKEN,
               },

@@ -60,7 +60,7 @@ export default function ImageUpload({ onSubmit, onChange, uploadId }: Props) {
                   onChange && onChange("");
                 }}>Cancel</Button>
               <Button variant="solid" bg="white" type="submit">
-                Upload FIle
+                Upload File
               </Button>
             </HStack>
           </>

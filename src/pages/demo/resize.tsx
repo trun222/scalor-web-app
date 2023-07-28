@@ -45,6 +45,7 @@ const ResizeActionPage: NextPage = () => {
   const [convertedImage, setConvertedImage] = React.useState("");
   const [isLoaded, setIsLoaded] = React.useState(true);
   const [uploadId, setUploadId] = React.useState("");
+  const [metadata, setMetadata] = React.useState({} as any);
 
   return (
     <SideBarLayout menuItems={actionMenuItems}>
@@ -65,6 +66,7 @@ const ResizeActionPage: NextPage = () => {
             setUploadId={setUploadId}
             setUploadedImage={setUploadedImage}
             setConvertedImage={setConvertedImage}
+            setMetadata={setMetadata}
             isLoaded={isLoaded}
           />
         </GridItem>
@@ -75,6 +77,7 @@ const ResizeActionPage: NextPage = () => {
 
           <ResizeAction
             uploadId={uploadId}
+            metadata={metadata}
             onIsLoaded={(state: boolean) => setIsLoaded(state)}
             onConvertedImage={(imageData: string) => setConvertedImage(imageData)}
             convertedImage={convertedImage}

@@ -6,7 +6,7 @@ import {
 } from "@chakra-ui/react";
 import { handleImageMutation } from "@/src/util/action.service";
 
-export default function GrayAction({ uploadId, onIsLoaded, onConvertedImage }: any) {
+export default function GrayAction({ uploadId, metadata, onIsLoaded, onConvertedImage }: any) {
   const toast = useToast();
 
   return (
@@ -21,7 +21,7 @@ export default function GrayAction({ uploadId, onIsLoaded, onConvertedImage }: a
               payload: {
                 id: uploadId,
                 platform: 'WEB',
-                mimeType: "image/jpg"
+                mimeType: metadata?.mimeType,
               },
               token: process?.env?.NEXT_PUBLIC_USER_API_TOKEN,
             },

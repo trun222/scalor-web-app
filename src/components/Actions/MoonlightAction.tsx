@@ -21,7 +21,7 @@ const MoonlightSchema = yup.object({
   moonValue: yup.number().positive().min(0).max(1).required(),
 }).required();
 
-export default function MoolightAction({ uploadId, onIsLoaded, onConvertedImage }: any) {
+export default function MoolightAction({ uploadId, metadata, onIsLoaded, onConvertedImage }: any) {
   const [moonValue, setMoonValue] = React.useState(0);
   const toast = useToast();
 
@@ -75,7 +75,7 @@ export default function MoolightAction({ uploadId, onIsLoaded, onConvertedImage 
                   id: uploadId,
                   moonValue,
                   platform: 'WEB',
-                  mimeType: "image/jpg"
+                  mimeType: metadata?.mimeType,
                 },
                 token: process?.env?.NEXT_PUBLIC_USER_API_TOKEN,
               },

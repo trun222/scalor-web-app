@@ -7,7 +7,7 @@ import {
 import { handleImageMutation } from "@/src/util/action.service";
 
 
-export default function ColorBalanceAction({ uploadId, onIsLoaded, onConvertedImage }: any) {
+export default function ColorBalanceAction({ uploadId, metadata, onIsLoaded, onConvertedImage }: any) {
   const toast = useToast();
 
   return (
@@ -22,7 +22,7 @@ export default function ColorBalanceAction({ uploadId, onIsLoaded, onConvertedIm
               payload: {
                 id: uploadId,
                 platform: 'WEB',
-                mimeType: "image/jpg"
+                mimeType: metadata?.mimeType,
               },
               token: process?.env?.NEXT_PUBLIC_USER_API_TOKEN,
             },

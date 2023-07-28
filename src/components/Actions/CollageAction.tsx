@@ -10,7 +10,7 @@ import { handleImageMutation } from "@/src/util/action.service";
 import ImageUpload from "@/src/components/ImageUpload";
 import httpLoader from "@/src/loaders/httpLoader";
 
-export default function CollageAction({ uploadId, onIsLoaded, onConvertedImage }: any) {
+export default function CollageAction({ uploadId, metadata, onIsLoaded, onConvertedImage }: any) {
   const [uploadIdTwo, setUploadIdTwo] = React.useState("");
   const [_, setUploadedImage] = React.useState("");
   const [isLoaded] = React.useState(true);
@@ -55,7 +55,7 @@ export default function CollageAction({ uploadId, onIsLoaded, onConvertedImage }
                 idOne: uploadId,
                 idTwo: uploadIdTwo,
                 platform: 'WEB',
-                mimeType: "image/jpg"
+                mimeType: metadata?.mimeType,
               },
               token: process?.env?.NEXT_PUBLIC_USER_API_TOKEN,
             },

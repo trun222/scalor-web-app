@@ -21,7 +21,7 @@ const SharpenSchema = yup.object({
   sharpenValue: yup.number().positive().min(0).max(10).required(),
 }).required();
 
-export default function SharpenAction({ uploadId, onIsLoaded, onConvertedImage }: any) {
+export default function SharpenAction({ uploadId, metadata, onIsLoaded, onConvertedImage }: any) {
   const [sharpenValue, setSharpenValue] = React.useState(0);
   const toast = useToast();
 
@@ -75,7 +75,7 @@ export default function SharpenAction({ uploadId, onIsLoaded, onConvertedImage }
                   id: uploadId,
                   sharpenValue,
                   platform: 'WEB',
-                  mimeType: "image/jpg"
+                  mimeType: metadata?.mimeType,
                 },
                 token: process?.env?.NEXT_PUBLIC_USER_API_TOKEN,
               },
