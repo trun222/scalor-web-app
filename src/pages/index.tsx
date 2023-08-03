@@ -48,7 +48,7 @@ const HomePage: NextPage = () => {
           </Center>
 
           <Center mb={8} textAlign="center">
-            <Text fontSize="2xl">Save 10x or more on file size and bandwidth with Scalor's Lossy Compression</Text>
+            <Text fontSize="2xl">Save 10x or more on file size and bandwidth with Scalor&apos;s Lossy Compression</Text>
           </Center>
 
           <VStack align="start" spacing="8">
