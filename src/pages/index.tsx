@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, GridItem, HStack, Stack, Text, Box, Center, Icon } from '@chakra-ui/react'
+import { Grid, GridItem, HStack, Stack, Text, Box, Center, Icon, VStack } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import Navbar from '@/src/components/Navbar';
 import LandingSection from '@/src/components/LandingSection';
@@ -9,6 +9,7 @@ import Footer from '@/src/components/Footer';
 import { FaAws } from 'react-icons/fa';
 import { VscAzure } from 'react-icons/vsc';
 import { MdOutlineWbCloudy } from 'react-icons/md';
+import Video from '@/src/components/common/Video';
 
 const HomePage: NextPage = () => {
   return (
@@ -39,10 +40,73 @@ const HomePage: NextPage = () => {
           <LandingSection />
         </GridItem>
 
+        <GridItem rowSpan={11} colSpan={12} bg='white' p={8}>
+          <Center mb={4}>
+            <Text className="fontBold"
+              fontSize="3xl">Easily encode your videos
+            </Text>
+          </Center>
+
+          <Center mb={8} textAlign="center">
+            <Text fontSize="2xl">Save 10x or more on file size and bandwidth with Scalor's Lossy Compression</Text>
+          </Center>
+
+          <VStack align="start" spacing="8">
+            <HStack spacing={4}>
+              <Text className="fontBold"
+                fontSize="xl">Stock 4K
+              </Text>
+              <Text fontWeight="thin"
+                fontSize="md">63.3 MB
+              </Text>
+            </HStack>
+
+            <Video
+              title="Stock 4K"
+              src="https://scalor.s3.amazonaws.com/site-examples/Video/stock_4k_footage.mp4"
+              aspectRatio={21 / 9}
+              style={{ height: '100%', width: '100%' }}
+            />
+
+            <HStack spacing={4}>
+              <Text className="fontBold"
+                fontSize="xl">Stock 1080p
+              </Text>
+              <Text fontWeight="thin"
+                fontSize="md">15.6 MB
+              </Text>
+            </HStack>
+
+            <Video
+              title="Stock 1080p"
+              src="https://scalor.s3.amazonaws.com/site-examples/Video/stock_1080_footage.mp4"
+              aspectRatio={21 / 9}
+              style={{ height: '100%', width: '100%' }}
+            />
+
+            <HStack spacing={4}>
+              <Text className="fontBold"
+                fontSize="xl">Stock 720p
+              </Text>
+              <Text fontWeight="thin"
+                fontSize="md">6.5 MB
+              </Text>
+            </HStack>
+
+            <Video
+              title="Stock 720p"
+              src="https://scalor.s3.amazonaws.com/site-examples/Video/stock_720_footage.mp4"
+              aspectRatio={21 / 9}
+              style={{ height: '100%', width: '100%' }}
+            />
+          </VStack>
+
+        </GridItem>
+
         <GridItem rowSpan={11} colSpan={12} bg='gray.400' p={8}>
           <Center mb={4}>
             <Text className="fontBold"
-              fontSize="3xl">Bring your own Storage!</Text>
+              fontSize="3xl">Bring your own Storage</Text>
           </Center>
 
           <Center mb={8} textAlign="center">
@@ -122,7 +186,7 @@ const HomePage: NextPage = () => {
           </Center>
 
           <Center mb={8} textAlign="center">
-            <Text fontSize="2xl">Automate your image resize workflow, spend less time editing images and creating custom solutions.</Text>
+            <Text fontSize="2xl">Automate your image resize workflow and spend less time creating custom solutions.</Text>
           </Center>
 
           <HStack justify="center" spacing={20}>

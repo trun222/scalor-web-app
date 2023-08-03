@@ -31,7 +31,7 @@ const LandingSection = () => {
             fontWeight="bold"
             color="white"
           >
-            The Image API that makes app development faster
+            The Multimedia API that makes app development faster, easier, and more fun.
           </Text>
           <Text
             textAlign="center"
@@ -40,10 +40,9 @@ const LandingSection = () => {
               sm: '2xl',
               md: '3xl',
             }}
-            fontWeight="semibold"
             color="white"
           >
-            Focus on your code, not editing images and managing media.
+            Focus on your code, not editing images and encoding video.
           </Text>
 
           <HStack spacing={4} mt={10}>

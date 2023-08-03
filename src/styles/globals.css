@@ -44,3 +44,17 @@ a {
 pre {
   overflow-x: scroll;
 }
+
+:where(
+    media-player:not([data-can-play])
+      media-community-skin[data-video]
+      div[part="scrim"]
+  ),
+:where(
+    media-player:not([data-user-idle])
+      media-community-skin[data-video]
+      div[part="scrim"]
+  ) {
+  opacity: 0 !important;
+  transition: var(--video-scrim-in-transition, opacity 0.15s ease-in);
+}

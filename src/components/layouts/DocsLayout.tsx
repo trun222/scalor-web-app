@@ -177,6 +177,11 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                     </Link>
                   </NextLink>
                 </MenuItem>
+
+
+                <MenuItem>
+                  <Text>Video API <span style={{ color: 'red' }}>(Early Access)</span></Text>
+                </MenuItem>
               </MenuList>
             </Menu>
           }
@@ -324,6 +329,10 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                 <span style={{ marginLeft: '10px' }}>Collage</span>
               </Link>
             </NextLink>
+          </ListItem>
+
+          <ListItem>
+            <Text>Video API <span style={{ color: 'red' }}>(Early Access)</span></Text>
           </ListItem>
         </List>
       </GridItem>
