@@ -16,14 +16,14 @@ const HomePage: NextPage = () => {
     <>
       <Head>
         {/* Used for browser tab title */}
-        <title>Image Upload API</title>
+        <title>The Multimedia API</title>
         {/* Used for SE site preview */}
         <meta
           name="description"
-          content="Image Upload API that makes building apps with images easy."
+          content="Multimedia API that makes building software easier."
           key="desc"
         />
-        <meta name="keywords" content="image api, developer, developer api, image conversion, upload, image upload, frontend, frontend developer, fullstack, fullstack developer, backend, backend developer" />
+        <meta name="keywords" content="multimedia, multimedia api, video api, image api, developer, developer api, image conversion, upload, image upload, frontend, frontend developer, fullstack, fullstack developer, backend, backend developer" />
         {/* Properly scale for mobile */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
