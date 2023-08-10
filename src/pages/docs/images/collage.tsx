@@ -8,17 +8,21 @@ import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import DocsLayout from '@/src/components/layouts/DocsLayout';
 import Description from '@/src/components/docs/Description';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
+import CodeSection from '@/src/components/docs/CodeSection';
+import {
+  imageCollageExample,
+} from '@/src/data/examples';
 
-const ResizeDocs: NextPage = () => {
+const CollageDocs: NextPage = () => {
   return (
     <DocsLayout>
       <ActionTitle
-        action="Resize"
+        action="Collage"
         method="POST"
       />
 
       <CopyClipboard
-        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/resize`}
+        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/collage`}
       />
 
       <Text fontSize="2xl">
@@ -26,28 +30,13 @@ const ResizeDocs: NextPage = () => {
       </Text>
 
       <Description>
-        Resize an image. Note: Depending on the aspect ratio of the image the dimensions will remain proportional. i.e. you want to change an image to 500x500 it may return 500x300
-        in order to maintain the proper ratio.
+        The collage action takes two images and combines them into one. The first uploadId will be the first image from left to right and the second uploadId
+        will be the second image. If the image dimensions are radically different there will be white space to preserve the ratio of the largest image.
       </Description>
 
-      <JSONSection
-        title="Headers"
-        json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
-        h="125px"
-        w="70%"
-      />
-
-      <JSONSection
-        title="Body"
-        json={{
-          "id": "721389da-2f9e-46f1-b2e0-72498002e421",
-          "height": 500,
-          "width": 500,
-          "platform": "WEB",
-          "mimeType": "image/jpg"
-        }}
-        h="200px"
-        w="70%"
+      <CodeSection
+        title="Request"
+        code={imageCollageExample.axiosCode}
       />
 
       <PropertiesSection
@@ -80,4 +69,4 @@ const ResizeDocs: NextPage = () => {
   )
 }
 
-export default ResizeDocs;
+export default CollageDocs;

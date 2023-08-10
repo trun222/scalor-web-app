@@ -6,6 +6,10 @@ import JSONSection from '@/src/components/docs/JSONSection';
 import DocsLayout from '@/src/components/layouts/DocsLayout';
 import Description from '@/src/components/docs/Description';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
+import CodeSection from '@/src/components/docs/CodeSection';
+import {
+  uploadExample,
+} from '@/src/data/examples';
 
 const UploadDocs: NextPage = () => {
   return (
@@ -24,30 +28,26 @@ const UploadDocs: NextPage = () => {
       </Text>
 
       <Description>
-        Upload an image (10MB limit per image) so that you can perform other actions on it such as resizing, adjusting the quality (compression), sharpening the colors, and many more.
-        Once the image is uploaded you will receive an uploadId that you will use for all subsequent operations on the image. The images on the server get wiped daily.
+        Upload an image or video (10MB limit) so that you can perform other actions on it such as encoding, resizing, adjusting the quality (compression), sharpening the colors, and many more.
+        Once the media is uploaded you will receive an uploadId that you will use for all subsequent operations on the media. You can upload the binary data directly, or use a URL. The media on the server gets wiped daily.
       </Description>
 
-      <JSONSection
-        title="Headers"
-        json={{ 'Content-Type': 'multipart-form-data', token: '${API_TOKEN}' }}
-        h="125px"
-        w="70%"
-      />
-
-      <JSONSection
-        title="Body"
-        json={{ file: '${multipart-form-data}' }}
-        h="100px"
-        w="70%"
+      <CodeSection
+        title="Request"
+        code={uploadExample.axiosCode}
       />
 
       <JSONSection
         title="Response"
         json={{
-          "uploadId": "9e51c122-a691-4bdf-84a7-d480xda2cf60"
+          "uploadId": "9e51c122-a691-4bdf-84a7-d480xda2cf60",
+          "metadata": {
+            "name": "Test.mp4",
+            "mimeType": "video/mp4",
+            "size": 66323913
+          }
         }}
-        h="100px"
+        h="210px"
         w="70%"
       />
     </DocsLayout >

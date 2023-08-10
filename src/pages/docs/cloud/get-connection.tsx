@@ -7,6 +7,10 @@ import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import DocsLayout from '@/src/components/layouts/DocsLayout';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
+import CodeSection from '@/src/components/docs/CodeSection';
+import {
+  getConnectionExample,
+} from '@/src/data/examples';
 
 const GetConnection: NextPage = () => {
   return (
@@ -34,11 +38,9 @@ const GetConnection: NextPage = () => {
         </i>
       </Description>
 
-      <JSONSection
-        title="Headers"
-        json={{ token: '${API_TOKEN}' }}
-        h="100px"
-        w="70%"
+      <CodeSection
+        title="Request"
+        code={getConnectionExample.axiosCode}
       />
 
       <JSONSection

@@ -8,6 +8,10 @@ import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import DocsLayout from '@/src/components/layouts/DocsLayout';
 import Description from '@/src/components/docs/Description';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
+import CodeSection from '@/src/components/docs/CodeSection';
+import {
+  imageGrayExample,
+} from '@/src/data/examples';
 
 const GrayDocs: NextPage = () => {
   return (
@@ -29,22 +33,9 @@ const GrayDocs: NextPage = () => {
         The gray method applies gray scale to an image or what most people consider a back and white image.
       </Description>
 
-      <JSONSection
-        title="Headers"
-        json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
-        h="125px"
-        w="70%"
-      />
-
-      <JSONSection
-        title="Body"
-        json={{
-          "id": "721389da-2f9e-46f1-b2e0-72498002e421",
-          "platform": "WEB",
-          "mimeType": "image/jpg"
-        }}
-        h="150px"
-        w="70%"
+      <CodeSection
+        title="Request"
+        code={imageGrayExample.axiosCode}
       />
 
       <PropertiesSection

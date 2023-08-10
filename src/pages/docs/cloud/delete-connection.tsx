@@ -7,6 +7,10 @@ import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import DocsLayout from '@/src/components/layouts/DocsLayout';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
+import CodeSection from '@/src/components/docs/CodeSection';
+import {
+  deleteConnectionExample,
+} from '@/src/data/examples';
 
 const DeleteConnection: NextPage = () => {
   return (
@@ -28,17 +32,15 @@ const DeleteConnection: NextPage = () => {
         Delete a Cloud Connection with the connectionId.
       </Description>
 
-      <JSONSection
-        title="Headers"
-        json={{ token: '${API_TOKEN}' }}
-        h="100px"
-        w="70%"
+      <CodeSection
+        title="Request"
+        code={deleteConnectionExample.axiosCode}
       />
 
       <JSONSection
         title="Example"
         json={{
-          "id": "9",
+          "id": "1",
         }}
         h="100px"
         w="70%"

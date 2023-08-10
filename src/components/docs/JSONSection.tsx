@@ -7,6 +7,7 @@ export default function JSONSection({ title, json, h, w }: { title: string, json
       <Text fontSize="2xl">
         {title}
       </Text>
+
       <Textarea bg="white"
         p={{
           base: 1,

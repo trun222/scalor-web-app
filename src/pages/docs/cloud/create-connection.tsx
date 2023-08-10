@@ -7,6 +7,10 @@ import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import DocsLayout from '@/src/components/layouts/DocsLayout';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
+import CodeSection from '@/src/components/docs/CodeSection';
+import {
+  createConnectionExample,
+} from '@/src/data/examples';
 
 const CreateConnection: NextPage = () => {
   return (
@@ -37,11 +41,9 @@ const CreateConnection: NextPage = () => {
           For your protection and best practice, limit permissions to a single bucket or folder per connection.</i>
       </Description>
 
-      <JSONSection
-        title="Headers"
-        json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
-        h="125px"
-        w="70%"
+      <CodeSection
+        title="Request"
+        code={createConnectionExample.axiosCode}
       />
 
       <JSONSection

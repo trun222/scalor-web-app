@@ -5,55 +5,133 @@ import Navbar from '@/src/components/Navbar';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router'
 
-const docMenuItems = [
-  {
-    action: 'Upload',
-    type: 'POST',
-    link: '/docs/upload'
+const docMenuItems = {
+  getStarted: {
+    title: 'Get Started',
+    link: '/docs/get-started'
   },
-  {
-    action: 'Resize',
-    type: 'POST',
-    link: '/docs/resize',
-    demo: '/demo/resize'
+  examples: {
+    title: 'Examples',
+    link: '/docs/examples'
   },
-  {
-    action: 'Quality',
-    type: 'POST',
-    link: '/docs/quality',
-    demo: '/demo/quality'
+  uploads: {
+    title: 'Upload',
+    items: [
+      {
+        action: 'Upload',
+        type: 'POST',
+        link: '/docs/uploads/upload',
+        color: 'purple',
+      },
+      {
+        action: 'Upload Cloud',
+        type: 'POST',
+        link: '/docs/uploads/upload-cloud',
+        color: 'purple',
+      },
+      {
+        action: 'Start Large Upload',
+        type: 'POST',
+        link: '/docs/uploads/start-large-upload',
+        color: 'purple',
+      },
+      {
+        action: 'Finish Large Upload',
+        type: 'POST',
+        link: '/docs/uploads/finish-large-upload',
+        color: 'purple',
+      }
+    ]
   },
-  {
-    action: 'Moonlight',
-    type: 'POST',
-    link: '/docs/moonlight',
-    demo: '/demo/moonlight'
+  cloud: {
+    title: 'Cloud',
+    items: [
+      {
+        action: 'Get Connection',
+        type: 'GET',
+        link: '/docs/cloud/get-connection',
+        color: 'orange',
+      },
+      {
+        action: 'Create Connection',
+        type: 'POST',
+        link: '/docs/cloud/create-connection',
+        color: 'purple',
+      },
+      {
+        action: 'Delete Connection',
+        type: 'DELETE',
+        link: '/docs/cloud/delete-connection',
+        color: 'red',
+      }
+    ]
   },
-  {
-    action: 'Sharpen',
-    type: 'POST',
-    link: '/docs/sharpen',
-    demo: '/demo/sharpen'
+  image: {
+    title: 'Image',
+    items: [
+      {
+        action: 'Resize',
+        type: 'POST',
+        link: '/docs/images/resize',
+        demo: '/demo/resize',
+        color: 'purple',
+      },
+      {
+        action: 'Quality',
+        type: 'POST',
+        link: '/docs/images/quality',
+        demo: '/demo/quality',
+        color: 'purple',
+      },
+      {
+        action: 'Moonlight',
+        type: 'POST',
+        link: '/docs/images/moonlight',
+        demo: '/demo/moonlight',
+        color: 'purple',
+      },
+      {
+        action: 'Sharpen',
+        type: 'POST',
+        link: '/docs/images/sharpen',
+        demo: '/demo/sharpen',
+        color: 'purple',
+      },
+      {
+        action: 'Color Balance',
+        type: 'POST',
+        link: '/docs/images/average',
+        demo: '/demo/color-balance',
+        color: 'purple',
+      },
+      {
+        action: 'Gray',
+        type: 'POST',
+        link: '/docs/images/gray',
+        demo: '/demo/gray',
+        color: 'purple',
+      },
+      {
+        action: 'Collage',
+        type: 'POST',
+        link: '/docs/images/collage',
+        demo: '/demo/collage',
+        color: 'purple',
+      }
+    ]
   },
-  {
-    action: 'Color Balance',
-    type: 'POST',
-    link: '/docs/average',
-    demo: '/demo/color-balance'
-  },
-  {
-    action: 'Gray',
-    type: 'POST',
-    link: '/docs/gray',
-    demo: '/demo/gray'
-  },
-  {
-    action: 'Collage',
-    type: 'POST',
-    link: '/docs/collage',
-    demo: '/demo/collage'
+  video: {
+    title: 'Video',
+    items: [
+      {
+        action: 'Encode',
+        type: 'POST',
+        link: '/docs/video/encode',
+        color: 'purple',
+      }
+    ]
   }
-];
+};
 
 export default function DocsLayout({ menuItems, children }: { menuItems?: any, children: any }) {
   const router = useRouter();
@@ -78,110 +156,88 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
               <MenuList p={0}>
 
                 <MenuItem>
-                  <Text>Cloud Connectors</Text>
-                </MenuItem>
-
-                <MenuItem>
-                  <NextLink href="/docs/cloud/get-connection" passHref>
-                    <Link color={activeRoute === "/docs/cloud/get-connection" ? 'pink.500' : 'black'}>
-                      <Badge colorScheme="orange">GET</Badge>
-                      <span style={{ marginLeft: '10px' }}>Get Connection</span>
+                  <NextLink href={docMenuItems.getStarted.link} passHref>
+                    <Link fontWeight="bold" color={activeRoute === docMenuItems.getStarted.link ? 'pink.500' : 'black'}>
+                      <span>{docMenuItems.getStarted.title}</span>
                     </Link>
                   </NextLink>
                 </MenuItem>
 
                 <MenuItem>
-                  <NextLink href="/docs/cloud/create-connection" passHref>
-                    <Link color={activeRoute === "/docs/cloud/create-connection" ? 'pink.500' : 'black'}>
-                      <Badge colorScheme="purple">POST</Badge>
-                      <span style={{ marginLeft: '10px' }}>Create Connection</span>
+                  <NextLink href={docMenuItems.examples.link} passHref>
+                    <Link fontWeight="bold" color={activeRoute === docMenuItems.examples.link ? 'pink.500' : 'black'}>
+                      <span>{docMenuItems.examples.title}</span>
                     </Link>
                   </NextLink>
                 </MenuItem>
 
                 <MenuItem>
-                  <NextLink href="/docs/cloud/delete-connection" passHref>
-                    <Link color={activeRoute === "/docs/cloud/delete-connection" ? 'pink.500' : 'black'}>
-                      <Badge colorScheme="red">DELETE</Badge>
-                      <span style={{ marginLeft: '10px' }}>Delete Connection</span>
-                    </Link>
-                  </NextLink>
+                  <Text fontWeight="bold">{docMenuItems.uploads.title}</Text>
                 </MenuItem>
 
+                {docMenuItems.uploads.items.map((menuItem: any) => {
+                  return (
+                    <MenuItem key={menuItem.link}>
+                      <NextLink href={menuItem.link} passHref>
+                        <Link color={activeRoute === menuItem.link ? 'pink.500' : 'black'}>
+                          <Badge colorScheme={menuItem.color}>{menuItem.type}</Badge>
+                          <span style={{ marginLeft: '10px' }}>{menuItem.action}</span>
+                        </Link>
+                      </NextLink>
+                    </MenuItem>
+                  )
+                })}
 
                 <MenuItem>
-                  <Text>Image API</Text>
+                  <Text>{docMenuItems.cloud.title}</Text>
                 </MenuItem>
 
-                <MenuItem>
-                  <NextLink href="/docs/upload" passHref>
-                    <Link color={activeRoute === "/docs/upload" ? 'pink.500' : 'black'}>
-                      <Badge colorScheme="purple">POST</Badge>
-                      <span style={{ marginLeft: '10px' }}>Upload</span>
-                    </Link>
-                  </NextLink>
-                </MenuItem>
-                <MenuItem>
-                  <NextLink href="/docs/resize" passHref>
-                    <Link color={activeRoute === "/docs/resize" ? 'pink.500' : 'black'}>
-                      <Badge colorScheme="purple">POST</Badge>
-                      <span style={{ marginLeft: '10px' }}>Resize</span>
-                    </Link>
-                  </NextLink>
-                </MenuItem>
-                <MenuItem>
-                  <NextLink href="/docs/quality" passHref>
-                    <Link color={activeRoute === "/docs/quality" ? 'pink.500' : 'black'}>
-                      <Badge colorScheme="purple">POST</Badge>
-                      <span style={{ marginLeft: '10px' }}>Quality</span>
-                    </Link>
-                  </NextLink>
-                </MenuItem>
-                <MenuItem>
-                  <NextLink href="/docs/moonlight" passHref>
-                    <Link color={activeRoute === "/docs/moonlight" ? 'pink.500' : 'black'}>
-                      <Badge colorScheme="purple">POST</Badge>
-                      <span style={{ marginLeft: '10px' }}>Moonlight</span>
-                    </Link>
-                  </NextLink>
-                </MenuItem>
-                <MenuItem>
-                  <NextLink href="/docs/sharpen" passHref>
-                    <Link color={activeRoute === "/docs/sharpen" ? 'pink.500' : 'black'}>
-                      <Badge colorScheme="purple">POST</Badge>
-                      <span style={{ marginLeft: '10px' }}>Sharpen</span>
-                    </Link>
-                  </NextLink>
-                </MenuItem>
-                <MenuItem>
-                  <NextLink href="/docs/average" passHref>
-                    <Link color={activeRoute === "/docs/average" ? 'pink.500' : 'black'}>
-                      <Badge colorScheme="purple">POST</Badge>
-                      <span style={{ marginLeft: '10px' }}>Color Balance</span>
-                    </Link>
-                  </NextLink>
-                </MenuItem>
-                <MenuItem>
-                  <NextLink href="/docs/gray" passHref>
-                    <Link color={activeRoute === "/docs/gray" ? 'pink.500' : 'black'}>
-                      <Badge colorScheme="purple">POST</Badge>
-                      <span style={{ marginLeft: '10px' }}>Gray</span>
-                    </Link>
-                  </NextLink>
-                </MenuItem>
-                <MenuItem>
-                  <NextLink href="/docs/collage" passHref>
-                    <Link color={activeRoute === "/docs/collage" ? 'pink.500' : 'black'}>
-                      <Badge colorScheme="purple">POST</Badge>
-                      <span style={{ marginLeft: '10px' }}>Collage</span>
-                    </Link>
-                  </NextLink>
-                </MenuItem>
-
+                {docMenuItems.cloud.items.map((menuItem: any) => {
+                  return (
+                    <MenuItem key={menuItem.link}>
+                      <NextLink href={menuItem.link} passHref>
+                        <Link color={activeRoute === menuItem.link ? 'pink.500' : 'black'}>
+                          <Badge colorScheme={menuItem.color}>{menuItem.type}</Badge>
+                          <span style={{ marginLeft: '10px' }}>{menuItem.action}</span>
+                        </Link>
+                      </NextLink>
+                    </MenuItem>
+                  )
+                })}
 
                 <MenuItem>
-                  <Text>Video API <span style={{ color: 'red' }}>(Early Access)</span></Text>
+                  <Text>{docMenuItems.image.title}</Text>
                 </MenuItem>
+
+                {docMenuItems.image.items.map((menuItem: any) => {
+                  return (
+                    <MenuItem key={menuItem.link}>
+                      <NextLink href={menuItem.link} passHref>
+                        <Link color={activeRoute === menuItem.link ? 'pink.500' : 'black'}>
+                          <Badge colorScheme="purple">{menuItem.type}</Badge>
+                          <span style={{ marginLeft: '10px' }}>{menuItem.action}</span>
+                        </Link>
+                      </NextLink>
+                    </MenuItem>
+                  )
+                })}
+
+                <MenuItem>
+                  <Text fontWeight="bold">{docMenuItems.video.title}</Text>
+                </MenuItem>
+
+                {docMenuItems.video.items.map((menuItem: any) => {
+                  return (
+                    <MenuItem key={menuItem.link}>
+                      <NextLink href={menuItem.link} passHref>
+                        <Link color={activeRoute === menuItem.link ? 'pink.500' : 'black'}>
+                          <Badge colorScheme={menuItem.color}>{menuItem.type}</Badge>
+                          <span style={{ marginLeft: '10px' }}>{menuItem.action}</span>
+                        </Link>
+                      </NextLink>
+                    </MenuItem>
+                  )
+                })}
               </MenuList>
             </Menu>
           }
@@ -191,7 +247,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
                 Demo
               </MenuButton>
               <MenuList p={0}>
-                {docMenuItems.map((menuItem: any) => {
+                {docMenuItems.image.items.map((menuItem: any) => {
                   if (menuItem.action === 'Upload') {
                     return;
                   }
@@ -219,7 +275,7 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
           lg: 'grid'
         }}
       >
-        <List spacing={3} p={4} minW="180px">
+        <List spacing={3} p={4} minW="180px" overflowY="scroll">
           {activeRoute.startsWith('/docs') &&
             <ListItem>
               <NextLink href="/docs/releases" passHref>
@@ -231,109 +287,89 @@ export default function DocsLayout({ menuItems, children }: { menuItems?: any, c
           }
 
           <ListItem>
-            <Text>Cloud Connectors</Text>
-          </ListItem>
-
-          <ListItem>
-            <NextLink href="/docs/cloud/get-connection" passHref>
-              <Link color={activeRoute === "/docs/cloud/get-connection" ? 'pink.500' : 'black'}>
-                <Badge colorScheme="orange">GET</Badge>
-                <span style={{ marginLeft: '10px' }}>Get Connection</span>
+            <NextLink href={docMenuItems.getStarted.link} passHref>
+              <Link fontWeight="bold" color={activeRoute === docMenuItems.getStarted.link ? 'pink.500' : 'black'}>
+                <span>{docMenuItems.getStarted.title}</span>
               </Link>
             </NextLink>
           </ListItem>
 
           <ListItem>
-            <NextLink href="/docs/cloud/create-connection" passHref>
-              <Link color={activeRoute === "/docs/cloud/create-connection" ? 'pink.500' : 'black'}>
-                <Badge colorScheme="purple">POST</Badge>
-                <span style={{ marginLeft: '10px' }}>Create Connection</span>
+            <NextLink href={docMenuItems.examples.link} passHref>
+              <Link fontWeight="bold" color={activeRoute === docMenuItems.examples.link ? 'pink.500' : 'black'}>
+                <span>{docMenuItems.examples.title}</span>
               </Link>
             </NextLink>
           </ListItem>
 
           <ListItem>
-            <NextLink href="/docs/cloud/delete-connection" passHref>
-              <Link color={activeRoute === "/docs/cloud/delete-connection" ? 'pink.500' : 'black'}>
-                <Badge colorScheme="red">DELETE</Badge>
-                <span style={{ marginLeft: '10px' }}>Delete Connection</span>
-              </Link>
-            </NextLink>
+            <Text fontWeight="bold">{docMenuItems.uploads.title}</Text>
           </ListItem>
 
 
-          <ListItem>
-            <Text>Image API</Text>
-          </ListItem>
+          {docMenuItems.uploads.items.map((menuItem: any) => {
+            return (
+              <ListItem key={menuItem.link}>
+                <NextLink href={menuItem.link} passHref>
+                  <Link color={activeRoute === menuItem.link ? 'pink.500' : 'black'}>
+                    <Badge colorScheme={menuItem.color}>{menuItem.type}</Badge>
+                    <span style={{ marginLeft: '10px' }}>{menuItem.action}</span>
+                  </Link>
+                </NextLink>
+              </ListItem>
+            )
+          })}
 
           <ListItem>
-            <NextLink href="/docs/upload" passHref>
-              <Link color={activeRoute === "/docs/upload" ? 'pink.500' : 'black'}>
-                <Badge colorScheme="purple">POST</Badge>
-                <span style={{ marginLeft: '10px' }}>Upload</span>
-              </Link>
-            </NextLink>
-          </ListItem>
-          <ListItem>
-            <NextLink href="/docs/resize" passHref>
-              <Link color={activeRoute === "/docs/resize" ? 'pink.500' : 'black'}>
-                <Badge colorScheme="purple">POST</Badge>
-                <span style={{ marginLeft: '10px' }}>Resize</span>
-              </Link>
-            </NextLink>
-          </ListItem>
-          <ListItem>
-            <NextLink href="/docs/quality" passHref>
-              <Link color={activeRoute === "/docs/quality" ? 'pink.500' : 'black'}>
-                <Badge colorScheme="purple">POST</Badge>
-                <span style={{ marginLeft: '10px' }}>Quality</span>
-              </Link>
-            </NextLink>
-          </ListItem>
-          <ListItem>
-            <NextLink href="/docs/moonlight" passHref>
-              <Link color={activeRoute === "/docs/moonlight" ? 'pink.500' : 'black'}>
-                <Badge colorScheme="purple">POST</Badge>
-                <span style={{ marginLeft: '10px' }}>Moonlight</span>
-              </Link>
-            </NextLink>
-          </ListItem>
-          <ListItem>
-            <NextLink href="/docs/sharpen" passHref>
-              <Link color={activeRoute === "/docs/sharpen" ? 'pink.500' : 'black'}>
-                <Badge colorScheme="purple">POST</Badge>
-                <span style={{ marginLeft: '10px' }}>Sharpen</span>
-              </Link>
-            </NextLink>
-          </ListItem>
-          <ListItem>
-            <NextLink href="/docs/average" passHref>
-              <Link color={activeRoute === "/docs/average" ? 'pink.500' : 'black'}>
-                <Badge colorScheme="purple">POST</Badge>
-                <span style={{ marginLeft: '10px' }}>Color Balance</span>
-              </Link>
-            </NextLink>
-          </ListItem>
-          <ListItem>
-            <NextLink href="/docs/gray" passHref>
-              <Link color={activeRoute === "/docs/gray" ? 'pink.500' : 'black'}>
-                <Badge colorScheme="purple">POST</Badge>
-                <span style={{ marginLeft: '10px' }}>Gray</span>
-              </Link>
-            </NextLink>
-          </ListItem>
-          <ListItem>
-            <NextLink href="/docs/collage" passHref>
-              <Link color={activeRoute === "/docs/collage" ? 'pink.500' : 'black'}>
-                <Badge colorScheme="purple">POST</Badge>
-                <span style={{ marginLeft: '10px' }}>Collage</span>
-              </Link>
-            </NextLink>
+            <Text fontWeight="bold">{docMenuItems.cloud.title}</Text>
           </ListItem>
 
+          {docMenuItems.cloud.items.map((menuItem: any) => {
+            return (
+              <ListItem key={menuItem.link}>
+                <NextLink href={menuItem.link} passHref>
+                  <Link color={activeRoute === menuItem.link ? 'pink.500' : 'black'}>
+                    <Badge colorScheme={menuItem.color}>{menuItem.type}</Badge>
+                    <span style={{ marginLeft: '10px' }}>{menuItem.action}</span>
+                  </Link>
+                </NextLink>
+              </ListItem>
+            )
+          })}
+
           <ListItem>
-            <Text>Video API <span style={{ color: 'red' }}>(Early Access)</span></Text>
+            <Text fontWeight="bold">{docMenuItems.image.title}</Text>
           </ListItem>
+
+          {docMenuItems.image.items.map((menuItem: any) => {
+            return (
+              <ListItem key={menuItem.link}>
+                <NextLink href={menuItem.link} passHref>
+                  <Link color={activeRoute === menuItem.link ? 'pink.500' : 'black'}>
+                    <Badge colorScheme={menuItem.color}>{menuItem.type}</Badge>
+                    <span style={{ marginLeft: '10px' }}>{menuItem.action}</span>
+                  </Link>
+                </NextLink>
+              </ListItem>
+            )
+          })}
+
+          <ListItem>
+            <Text fontWeight="bold">{docMenuItems.video.title}</Text>
+          </ListItem>
+
+          {docMenuItems.video.items.map((menuItem: any) => {
+            return (
+              <ListItem key={menuItem.link}>
+                <NextLink href={menuItem.link} passHref>
+                  <Link color={activeRoute === menuItem.link ? 'pink.500' : 'black'}>
+                    <Badge colorScheme={menuItem.color}>{menuItem.type}</Badge>
+                    <span style={{ marginLeft: '10px' }}>{menuItem.action}</span>
+                  </Link>
+                </NextLink>
+              </ListItem>
+            )
+          })}
         </List>
       </GridItem>
       <GridItem

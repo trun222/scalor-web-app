@@ -8,17 +8,21 @@ import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import DocsLayout from '@/src/components/layouts/DocsLayout';
 import Description from '@/src/components/docs/Description';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
+import CodeSection from '@/src/components/docs/CodeSection';
+import {
+  imageQualityExample,
+} from '@/src/data/examples';
 
-const SharpenDocs: NextPage = () => {
+const QualityDocs: NextPage = () => {
   return (
     <DocsLayout>
       <ActionTitle
-        action="Sharpen"
+        action="Quality"
         method="POST"
       />
 
       <CopyClipboard
-        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/sharpen`}
+        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/quality`}
       />
 
       <Text fontSize="2xl">
@@ -26,27 +30,15 @@ const SharpenDocs: NextPage = () => {
       </Text>
 
       <Description>
-        The sharpen action adds sharper, more vibrant color contrast to an image. Similar to the effect of changing a television
-        picture profile to Vivid. The colors will pop and the edges around an object will be more defined the higher the sharpen value.
+        The quality action allows you to adjust the quality of the image uploaded from 1% to 100%.
+        You can use this action to get high quality compression. If you set the quality to 50% and the original
+        image is fairly large in size you will be amazed to see that there is almost no difference visually in quality, but huge
+        differences in file sizes.
       </Description>
 
-      <JSONSection
-        title="Headers"
-        json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
-        h="125px"
-        w="70%"
-      />
-
-      <JSONSection
-        title="Body"
-        json={{
-          "id": "721389da-2f9e-46f1-b2e0-72498002e421",
-          "sharpenValue": 2,
-          "platform": "WEB",
-          "mimeType": "image/jpg"
-        }}
-        h="175px"
-        w="70%"
+      <CodeSection
+        title="Request"
+        code={imageQualityExample.axiosCode}
       />
 
       <PropertiesSection
@@ -72,11 +64,11 @@ const SharpenDocs: NextPage = () => {
             "data": "${BINARY_DATA}"
           }
         }}
-        h="175px"
+        h="170px"
         w="70%"
       />
-    </DocsLayout>
+    </DocsLayout >
   )
 }
 
-export default SharpenDocs;
+export default QualityDocs;

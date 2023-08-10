@@ -6,7 +6,7 @@ interface Props {
   onChange?: (string: string) => void
 }
 
-export default function ImageUpload({ onSubmit, onChange, uploadId }: Props) {
+export default function ImageUpload({ onSubmit, onChange }: Props) {
   const [loadedImage, setLoadedImage] = React.useState(null);
   const inputRef = React.useRef(null);
 

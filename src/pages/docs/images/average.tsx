@@ -2,23 +2,27 @@
 import React from 'react';
 import type { NextPage } from 'next'
 import { Text } from '@chakra-ui/react'
+import Description from '@/src/components/docs/Description';
 import ActionTitle from '@/src/components/docs/ActionTitle';
 import JSONSection from '@/src/components/docs/JSONSection';
 import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import DocsLayout from '@/src/components/layouts/DocsLayout';
-import Description from '@/src/components/docs/Description';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
+import CodeSection from '@/src/components/docs/CodeSection';
+import {
+  imageColorBalanceExample,
+} from '@/src/data/examples';
 
-const QualityDocs: NextPage = () => {
+const AverageDocs: NextPage = () => {
   return (
     <DocsLayout>
       <ActionTitle
-        action="Quality"
+        action="Average"
         method="POST"
       />
 
       <CopyClipboard
-        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/quality`}
+        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/average`}
       />
 
       <Text fontSize="2xl">
@@ -26,29 +30,13 @@ const QualityDocs: NextPage = () => {
       </Text>
 
       <Description>
-        The quality action allows you to adjust the quality of the image uploaded from 1% to 100%.
-        You can use this action to get high quality compression. If you set the quality to 50% and the original
-        image is fairly large in size you will be amazed to see that there is almost no difference visually in quality, but huge
-        differences in file sizes.
+        The color average method takes the average of all of the image pixels colors and applies that to the entire image. i.e. if there are many dark or light pixels that will effect
+        the color of the rest of the pixels within the image.
       </Description>
 
-      <JSONSection
-        title="Headers"
-        json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
-        h="125px"
-        w="70%"
-      />
-
-      <JSONSection
-        title="Body"
-        json={{
-          "id": "721389da-2f9e-46f1-b2e0-72498002e421",
-          "quality": 50,
-          "platform": "WEB",
-          "mimeType": "image/jpg"
-        }}
-        h="175px"
-        w="70%"
+      <CodeSection
+        title="Request"
+        code={imageColorBalanceExample.axiosCode}
       />
 
       <PropertiesSection
@@ -77,8 +65,8 @@ const QualityDocs: NextPage = () => {
         h="175px"
         w="70%"
       />
-    </DocsLayout >
+    </DocsLayout>
   )
 }
 
-export default QualityDocs;
+export default AverageDocs;

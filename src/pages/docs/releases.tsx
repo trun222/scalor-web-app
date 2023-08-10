@@ -1,13 +1,48 @@
 
 import React from 'react';
 import type { NextPage } from 'next'
-import { Text, Box } from '@chakra-ui/react';
+import { Text, Box, Link } from '@chakra-ui/react';
 import DocsLayout from '@/src/components/layouts/DocsLayout';
 // import ReactPlayer from 'react-player';
 
 const Releases: NextPage = () => {
   return (
     <DocsLayout>
+      <Text fontSize="4xl">
+        Release #2
+      </Text>
+
+      {/* 
+      <Box h="350px" w={{ base: '100%', md: '75%', lg: '600px' }}>
+        <ReactPlayer height="100%" width="100%" url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+      </Box> */}
+
+      <Text fontSize="2xl">
+        New 🙌
+      </Text>
+
+      <Box pl={8} w={{ base: '75%', md: "50%" }}>
+        <ul style={{ width: '100%' }}>
+          <li>
+            Video Encoding - You can now encode videos with our API. You can convert your videos to a lower resolution.
+          </li>
+        </ul>
+      </Box>
+
+
+      <Text fontSize="2xl">
+        Improvements 🧰
+      </Text>
+
+      <Box pl={8} w={{ base: '75%', md: "50%" }}>
+        <ul style={{ width: '100%' }}>
+          <li>
+            Docs have been updated to reflect the new changes and include a <Link style={{ textDecoration: 'underline', color: '#ED64A6' }} href="/docs/get-started">Get Started</Link> &nbsp;
+            section, <Link style={{ textDecoration: 'underline', color: '#ED64A6' }} href="/docs/examples">Examples</Link> section and improved code snippets.
+          </li>
+        </ul>
+      </Box>
+
       <Text fontSize="4xl">
         Release #1
       </Text>

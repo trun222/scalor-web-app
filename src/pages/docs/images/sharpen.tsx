@@ -8,17 +8,21 @@ import PropertiesSection from '@/src/components/docs/PropertiesSection';
 import DocsLayout from '@/src/components/layouts/DocsLayout';
 import Description from '@/src/components/docs/Description';
 import CopyClipboard from '@/src/components/common/CopyClipboard';
+import CodeSection from '@/src/components/docs/CodeSection';
+import {
+  imageSharpenExample,
+} from '@/src/data/examples';
 
-const MoonlightDocs: NextPage = () => {
+const SharpenDocs: NextPage = () => {
   return (
     <DocsLayout>
       <ActionTitle
-        action="Moonlight"
+        action="Sharpen"
         method="POST"
       />
 
       <CopyClipboard
-        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/moonlight`}
+        text={`${process?.env?.NEXT_PUBLIC_API_ENDPOINT}/sharpen`}
       />
 
       <Text fontSize="2xl">
@@ -26,26 +30,13 @@ const MoonlightDocs: NextPage = () => {
       </Text>
 
       <Description>
-        The Moonlight action adds a cool moonlight effect to images without removing color from the image.
+        The sharpen action adds sharper, more vibrant color contrast to an image. Similar to the effect of changing a television
+        picture profile to Vivid. The colors will pop and the edges around an object will be more defined the higher the sharpen value.
       </Description>
 
-      <JSONSection
-        title="Headers"
-        json={{ 'Content-Type': 'application/json', token: '${API_TOKEN}' }}
-        h="125px"
-        w="70%"
-      />
-
-      <JSONSection
-        title="Body"
-        json={{
-          "id": "721389da-2f9e-46f1-b2e0-72498002e421",
-          "moonValue": 0.9,
-          "platform": "WEB",
-          "mimeType": "image/jpg"
-        }}
-        h="175px"
-        w="70%"
+      <CodeSection
+        title="Request"
+        code={imageSharpenExample.axiosCode}
       />
 
       <PropertiesSection
@@ -74,8 +65,8 @@ const MoonlightDocs: NextPage = () => {
         h="175px"
         w="70%"
       />
-    </DocsLayout >
+    </DocsLayout>
   )
 }
 
-export default MoonlightDocs;
+export default SharpenDocs;
